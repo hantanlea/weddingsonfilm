@@ -77,7 +77,7 @@ a.play {
 
 
 a.down {
-    background-image: url("/images/arrow.png");
+    background-image: url("images/arrow.png");
     background-size: 40px;
     background-repeat: no-repeat;
     display: block;
