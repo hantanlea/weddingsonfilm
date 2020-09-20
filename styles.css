@@ -41,14 +41,14 @@ nav a {
 /* BANNER */
 
 div.bgvideo {
-    background-image: url("/images/banner2.jpg");
+    background-image: url("images/banner2.jpg");
     height: 100vh;
     background-position: top;
     background-repeat: no-repeat;
 }
 
 a.logo {
-    background-image: url("/images/logo.png");
+    background-image: url("images/logo.png");
     background-size: 300px;
     background-repeat: no-repeat;
     display: block;
@@ -62,7 +62,7 @@ a.logo {
 }
 
 a.play {
-    background-image: url("/images/play.png");
+    background-image: url("images/play.png");
     background-size: 80px;
     background-repeat: no-repeat;
     display: block;
