@@ -12,32 +12,6 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 } 
 
-/* NAVIGATION */
-
-nav {
-    height: 60px;
-    border-bottom-style: groove;
-    
-}
-
-nav ul {
-    width: 300px;
-    margin: 0 auto;
-}
-
-nav li {
-    line-height: 60px;
-    display: inline-block;
-}
-
-nav a {
-    color: darkslategray;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 14px;
-    padding: 20px;
-}
-
 /* BANNER */
 
 div.bgvideo {
@@ -89,12 +63,48 @@ a.down {
     margin: 0 auto;
 }
 
+/* NAVIGATION */
+
+nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    height: 60px;
+    background: #151915;
+    z-index: 2;
+}
+
+nav ul {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+nav li {
+    display: inline-block;
+    padding: 20px;
+    width: 100px;
+    margin: 0 auto;
+}
+
+nav a {
+    color: white;
+    text-transform: uppercase;
+    font-size: 20px;
+    line-height: 20px;
+    font-family: 'Rock Salt', cursive;
+    text-align: center;
+}
+
+nav a:hover {
+    color: lavender;
+}
+
 /* BODY */
 
 .wrapper {
     margin: 0 auto;
-    width: 900px;
-    background-color: ivory;
+    width: 1000px;
+    background-color: white;
 }
 
 section {
@@ -104,14 +114,15 @@ section {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    padding: 0 50px;
 }
 
 h1 {
     width: 100%;
     margin: 10px 0;
     font-size: 30px;
-    font-weight: 900;
-    font-family: 'Rock Salt', cursive;
+    font-weight: 600;
+    font-family: 'Signika', sans-serif;
 }
 
 .about p {
@@ -127,28 +138,30 @@ h1 {
 
 div.photos {
     width: 400px;
-}
-
-.photos img:first-of-type {
-    margin: 10px 0 0 10px;
     position: relative;
     top: 30px;
+}
+
+.photos img.photo1 {
+    margin: 10px 0 10px 0;
     width: 400px;
     height: 261px;
 }
 
-.photos img {
-    margin: 10px 0 10px 10px;
-    background: white;
-    height: 140px;
+.photos img.photo2 {
+    margin: 10px 10px 0 0;
+    height: 200px;
+}
+
+.photos img.photo3 {
+    height: 200px;    
+    margin: 10px 0 0 10px;
 }
 
 /* MOVIES */
 
 section.movies {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    height: 100vh;    
 }
 
 h1 {
@@ -159,23 +172,33 @@ h1 {
 
 div.thumbnails {
     margin: 0 auto;
+    width: 1000px;
 }
 
 figure {
-    width: 200px;
-    margin: 20px;
+    width: 280px;
+    height: 260px;
+    margin: 10px 50px 0 0;
     text-align: center;
     display: inline-block;
+    background: red;
+}
+
+figure div {
+    background: black;
+    height: 260px;
+    margin-bottom: 20px;
 }
 
 figure img {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 15px;
+    width: 280px;
+    height: 260px;
+    opacity: 0.5;
 }
 
 caption {
     width: 200px;
+    background: red;
 }
 
 .testimonials {
