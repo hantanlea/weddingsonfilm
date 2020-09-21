@@ -104,12 +104,13 @@ nav a:hover {
 .wrapper {
     margin: 0 auto;
     width: 1000px;
-    background-color: white;
 }
 
 section {
-    margin: 30px 0;
+    padding: 30px;
+    margin: 20px;
 }
+
 .about {
     display: flex;
     flex-wrap: wrap;
@@ -125,6 +126,10 @@ h1 {
     font-family: 'Signika', sans-serif;
 }
 
+.about .text {
+    padding: 30px;
+}
+
 .about p {
     width: 400px;
     line-height: 1.5;
@@ -132,9 +137,6 @@ h1 {
     text-indent: 15px;
 }
 
-.about .text {
-    padding: 30px;
-}
 
 div.photos {
     width: 400px;
@@ -160,8 +162,11 @@ div.photos {
 
 /* MOVIES */
 
+div.m {
+}
+
 section.movies {
-    height: 100vh;    
+    margin-top: 60px;
 }
 
 h1 {
@@ -199,6 +204,22 @@ figure img {
 caption {
     width: 200px;
     background: red;
+}
+
+div.enquire {
+    width: 100px;
+    height: 40px;
+    margin: 0 auto;
+    background: slategray;
+}
+
+div.enquire a {
+    width: 100px;
+    height: 40px;
+    padding: 20px;
+    position: relative;
+    top: 10px;
+    color: white;
 }
 
 .testimonials {
