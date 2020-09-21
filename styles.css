@@ -27,12 +27,12 @@ a.logo {
     background-repeat: no-repeat;
     display: block;
     top: 180px;
+    right: calc(50% - 90px);
     width: 180px;
     height: 150px;
-    position: relative;
+    position: absolute;
     text-indent: -9999999px;
     margin: 0 auto;
-    opacity: 0.8;
 }
 
 a.play {
@@ -41,9 +41,10 @@ a.play {
     background-repeat: no-repeat;
     display: block;
     width: 80px;
-    top: 170px;
+    top: 320px;
+    left: calc(50% - 40px);
     height: 80px;
-    position: relative;
+    position: absolute;
     text-indent: -9999999px;
     margin: 0 auto;
     opacity: 0.8;
@@ -51,16 +52,18 @@ a.play {
 
 
 a.down {
-    background-image: url("images/arrow.png");
-    background-size: 40px;
+    background-image: url("images/arrow3.png");
+    opacity: 0.6;
+    background-size: 30px;
     background-repeat: no-repeat;
     display: block;
     width: 40px;
-    top: 350px;
-    height: 80px;
-    position: relative;
+    height: 45px;
+    position: absolute;
+    left: calc(50% - 20px);
+    bottom: 10px;
     text-indent: -9999999px;
-    margin: 0 auto;
+    z-index: 2;
 }
 
 /* NAVIGATION */
@@ -70,33 +73,51 @@ nav {
     position: sticky;
     top: 0;
     height: 60px;
-    background: #151915;
+    background: black;
+    opacity: 0.8;
     z-index: 2;
 }
 
 nav ul {
     width: fit-content;
+    height: 60px;
     margin: 0 auto;
 }
 
 nav li {
     display: inline-block;
-    padding: 20px;
-    width: 100px;
-    margin: 0 auto;
+    margin: 10px auto;
 }
 
 nav a {
     color: white;
     text-transform: uppercase;
     font-size: 20px;
-    line-height: 20px;
-    font-family: 'Rock Salt', cursive;
+    padding: 10px;
+    font-family: 'Signika', cursive;
     text-align: center;
+    margin: 0 20px;
 }
 
 nav a:hover {
-    color: lavender;
+    color: aqua;
+}
+
+a:target {
+    color: aqua;
+}
+
+a.smalllogo {
+    background-image: url("images/talllogo.png");
+    background-size: 80px;
+    height: 60px;
+    display: block;
+    position: relative;
+    top: -10px;
+    margin: 0 10px;
+    background-repeat: no-repeat;
+    width: 100px;
+    text-indent: -9999999px;
 }
 
 /* BODY */
@@ -220,6 +241,8 @@ div.enquire a {
     position: relative;
     top: 10px;
     color: white;
+    font-family: 'Signika', Serif;
+    text-transform: uppercase;
 }
 
 .testimonials {
