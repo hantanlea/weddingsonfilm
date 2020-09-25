@@ -200,8 +200,8 @@ div.photos {
 /* MOVIES */
 
 section.movies {
-    padding-top: 90px;
-    margin: 0 0 90px 0;
+    padding-top: 150px;
+    margin: 0 0 190px 0;
 }
 
 div.thumbnails {
@@ -242,8 +242,8 @@ caption {
 }
 
 div.enquire {
+    display: none;
     width: 130px;
-    display: block;
     height: 50px;
     margin: 0 auto;
     background: slategray;
