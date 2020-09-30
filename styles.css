@@ -4,6 +4,8 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
+
+    font-family: 'Raleway', 'Sacramento';
 }
 
 /* BASICS */
@@ -18,7 +20,6 @@ p {
     line-height: 1.5;
     margin-bottom: 25px;
     text-indent: 15px;
-    font-family: 'Raleway', 'Sacramento';
 }
 
 /* padding margin trick to allow fixed nav bar */
@@ -225,15 +226,91 @@ figcaption {
 
 /* ENQUIRE */
 
-div.enquire {
-    display: none;
+form {
+    width: 700px;
+    margin: 0 auto;
+}
+
+form p {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+input {
+    height: 30px;
+    margin: 10px;
+    width: 100%;
+    padding: 10px;
+}
+
+div.names {
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+input.person {
+    width: 250px;
+    margin: 10px 20px;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+}
+
+input, textarea {
+    outline: none;
+    border: 1px solid #ddd;
+}
+
+input:focus, textarea:focus {
+    box-shadow: 0 0 4px peru;
+}
+
+::placeholder {
+    color: peru;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: peru;
+    opacity: 1;
+}
+
+::-ms-input-placeholder {
+    color: peru;
+    opacity: 1;
+}
+
+button {
+    display: block;
+    padding: 15px 20px;
+    margin: 0 auto;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    color: peru;
+    font-family: 'Playfair Display', serif;
+}
+
+button:hover {
+    background: #ddd;
+}
+
+.oldbutton {
     width: 130px;
     height: 50px;
     margin: 0 auto;
     background: slategray;
 }
 
-div.enquire a {
+.oldbutton a {
     color: white;
     font-size: 20px;
     display: block;
@@ -243,7 +320,7 @@ div.enquire a {
     padding: 15px;
 }
 
-div.enquire a:hover {
+.oldbutton a:hover {
     color: gold;
 }
 
