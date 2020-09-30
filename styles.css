@@ -6,10 +6,34 @@
     text-decoration: none;
 }
 
+/* BASICS */
+
 body {
     background: white;
     color: darkslategray;
+    font-family: ;
 } 
+
+p {
+    line-height: 1.5;
+    margin-bottom: 25px;
+    text-indent: 15px;
+    font-family: 'Raleway', 'Sacramento';
+}
+
+/* padding margin trick to allow fixed nav bar */
+
+h1 {
+    padding-top: 90px;
+    margin-top: -90px;
+    padding-bottom: 40px;
+    font-family: 'Playfair Display', serif;
+    color: peru;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+}
+
 
 /* BANNER */
 
@@ -76,7 +100,7 @@ nav {
     height: 70px;
     background: #fbfbfb;
     border-bottom: 1px solid #4d0000;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 nav ul {
@@ -106,6 +130,10 @@ nav a:hover {
     color: darkseagreen;
 }
 
+nav a:target {
+    color: darkseagreen;
+}
+
 
 a.smalllogo {
     word-spacing: 99999px;
@@ -125,15 +153,15 @@ main {
 }
 
 section {
-    padding: 150px 0 90px 0;
+    padding: 60px 0;
 }
+
 
 section.about {
     margin: 0 auto;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    padding-top: 90px;
 }
 
 .about-text {
@@ -141,22 +169,17 @@ section.about {
     width: 400px;
 }
 
-.about-text p {
-    line-height: 1.5;
-    margin-bottom: 25px;
-    text-indent: 15px;
-    font-family: 'Raleway', 'Sacramento';
-}
 
 div.about-photos {
     width: 400px;
 }
 
 .about-photos img.photo1 {
-    height: 500px;
+    height: auto;
 }
 
 /* MOVIES */
+
 
 section.movies {
     display: flex;
@@ -164,10 +187,11 @@ section.movies {
     justify-content: center;
 }
 
+
 figure {
     width: 280px;
     height: fit-content;
-    margin: 30px;
+    margin: 0 30px 30px 30px;
     text-align: center;
     font-family: 'Playfair Display', serif;
     color: #4d0000;
@@ -241,3 +265,25 @@ footer {
     font-size: 10px;
 }
 
+@media only screen and (max-width: 600px) {
+    
+    nav {
+        position: relative;
+    }
+
+
+
+    figure div {
+        width: 90%;
+        height: auto;
+    }
+
+    section {
+        width: 90%;
+    }
+
+    .about-photos img {
+        width: 90%;
+        height: auto;
+    }
+}
