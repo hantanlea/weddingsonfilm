@@ -13,7 +13,6 @@
 body {
     background: white;
     color: darkslategray;
-    font-family: ;
     padding: 0;
     margin: 0;
 } 
@@ -186,6 +185,7 @@ div.about-photos {
 }
 
 .about-photos img.photo1 {
+    width: 100%;
     height: auto;
 }
 
@@ -434,8 +434,12 @@ footer {
         width: 90%;
     }
 
-    .about-photos img {
+    .photo1 {
         width: 90%;
-        height: auto;
+    }
+    
+
+    section.enquire form {
+        width: 99%;
     }
 }
