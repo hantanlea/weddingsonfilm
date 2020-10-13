@@ -11,7 +11,6 @@
 /* BASICS */
 
 body {
-    background: white;
     color: darkslategray;
     padding: 0;
     margin: 0;
@@ -20,15 +19,11 @@ body {
 p {
     line-height: 1.5;
     margin-bottom: 25px;
-    text-indent: 15px;
 }
 
 /* padding margin trick to allow fixed nav bar */
 
 h1 {
-    padding-top: 90px;
-    margin-top: -90px;
-    padding-bottom: 30px;
     font-family: 'Playfair Display', serif;
     color: peru;
     text-transform: uppercase;
@@ -39,12 +34,26 @@ h1 {
 
 /* BANNER */
 
+header {
+    position: relative;
+    width: 100%;
+}
+
 div.bgvideo {
     position: relative;
-    background-image: url("images/banner2.jpg");
-    height: 100vh;
-    background-position: top;
+    height: calc(100vh + 90px);
+}
+
+div.banner {
+    position: absolute;
+    background-image: url("images/banner3.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: center center;
+    filter: brightness(50%);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 a.logo {
@@ -65,53 +74,62 @@ a.logo {
 a.play {
     display: block;
     position: relative;
-    top: 35vh;
     width: 80px;
+    top: 35vh;
     height: 80px;
     margin: 0 auto;
-    background-image: url("images/play.png");
+    background-image: url("images/play2.png");
     background-size: 100%;
     background-repeat: no-repeat;
     text-indent: -9999999px;
-    opacity: 0.7;
+    opacity: 0.4;
+    z-index: 999999;
+    transition: all 0.5s ease-in-out 0.01s;
+    -webkit-transition: all 0.5s ease-in-out 0.01s;
+    -o-transition: all 0.5s ease-in-out 0.01s;
+    -moz-transition: all 0.5s ease-in-out 0.01s;
+}
+
+a.play:hover {
+    opacity: 1;
 }
 
 
 a.down {
-    display: block;
+    display: none;
     position: absolute;
-    bottom: 10px;
     width: 40px;
+    bottom: 100px;
     height: 45px;
     left: 50%;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     background-image: url("images/arrow3.png");
-    background-size: 30px;
+    background-size: 25px;
     background-repeat: no-repeat;
     text-indent: -9999999px;
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
 /* NAVIGATION */
 
 nav {
-    position: sticky;
-    position: -webkit-sticky;
+    position: absolute;
     top: 0;
     width: 100%;
-    height: 70px;
-    background: #fbfbfb;
-    border-bottom: 1px solid #4d0000;
-    z-index: 99;
+    /* position: -webkit-sticky; */
+    background: white;
+    opacity: 0.8;
+    z-index: 10;
 }
 
 nav ul {
     height: 100%;
-    margin: 0 auto;
+    margin: 5px auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: white;
 }
 
 nav li {
@@ -121,10 +139,10 @@ nav li {
 nav a {
     display: block;
     width: 120px;
-    padding: 5px;
+    padding: 20px;
     color: peru;
     text-transform: uppercase;
-    font-size: 15px;
+    font-size: 16px;
     font-family: 'Playfair Display', serif;
     text-align: center;
 }
@@ -140,8 +158,9 @@ nav a:target {
 
 nav ul li.smalllogo a {
     word-spacing: 99999px;
+    display: none;
     font-weight: 900;
-    font-size: 18px;
+    font-size: 20px;
     color: #4d0000;
     font-family: 'Sacramento';
     text-transform: none;
@@ -154,34 +173,36 @@ nav ul li.mobilemenu, nav ul li.top {
 
 /* BODY */
 
-main {
-    width: 100%;
-}
-
 section {
-    padding: 60px 0;
-    margin-bottom: 50px;
+    padding: 30px 0;
     background: white;
-    width: 80%;
-    margin: 0 auto;
+    margin: 0 auto 100px auto;
 }
 
+.about h1 {
+    padding-bottom: 50px;
+    padding-top: 60px;
+    margin-top: -60px;
+}
 
 section.about {
+    margin-top: -90px;
+    max-width: 1000px;
+    padding-left: 50px;
+    padding-right: 50px;
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: space-around;
+    z-index: 10;
 }
 
 .about-text {
-    margin: 0 30px;
-    padding-bottom: 30px;
-    width: 400px;
+    max-width: 400px;
 }
 
 
 div.about-photos {
-    width: 400px;
+    max-width: 400px;
 }
 
 .about-photos img.photo1 {
@@ -192,100 +213,124 @@ div.about-photos {
 /* MOVIES */
 
 .movies h1 {
-    padding-top: 130px;
-    margin-bottom: 30px;
+    text-indent: -999999px;
+    padding-top: 100px;
+    margin-top: -140px;
 }
 
 
 section.movies {
-    margin-bottom: 30px;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     align-content: center;
     width: 100%;
+    margin-bottom: 180px;
 }
 
 figure {
-    width: 280px;
-    height: 350px;
+    position: relative;
+    width: fit-content;
+    height: fit-content;
     margin: 0 30px;
     text-align: center;
+}
+
+figcaption {
     font-family: 'Playfair Display', serif;
+    color: peru;
+    margin-bottom: 25px;
 }
 
 figure img {
     width: 280px;
-    height: 260px;
-    filter: brightness(50%);
+    height: auto;
+    filter: brightness(80%);
     transition: all 0.5s ease-in-out 0.01s;
     -webkit-transition: all 0.5s ease-in-out 0.01s;
     -o-transition: all 0.5s ease-in-out 0.01s;
     -moz-transition: all 0.5s ease-in-out 0.01s;
 }
 
-figure img:hover {
-    filter: brightness(100%);
+figure img.play {
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    top: 110px;
+    left: 110px;
+    opacity: 0;
+}
+
+figure a:hover img:first-child {
+    filter: brightness(30%);
+}
+
+figure a:hover img.play {
+    opacity: 0.7;
 }
 
 figcaption {
     margin-top: 10px;
 }
 
+/* ARTICLES */
+
+article {
+    display: none;
+}
 
 /* ENQUIRE */
 
+.enquire h1 {
+    padding-top: 50px;
+    margin-top: -50px;
+}
+
 section.enquire {
-    width: 100%;
     height: fit-content;
-    background-image: url("images/texture3.jpg");
+    background-image: url(images/texture3.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-
     background-attachment: fixed;
-    
+    margin-bottom: 0;
 }
 
 section.enquire form {
-    width: 70%;
+    width: 60%;
     margin: 0 auto;
+    padding: 20px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    align-content: center;
+    align-items: baseline;
 }
 
 form p {
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px;
+    flex: 1 0 100%;
+    text-align: center;
 }
 
-input {
-    height: 30px;
-    margin: 10px;
-    width: 90%;
+input, textarea {
     padding: 10px;
-}
-
-div.names {
-    display: flex;
-    width: 100%;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
+    flex: 0 0 100%; 
+    margin: 10px 0;
 }
 
 input.person {
-    width: 250px;
-    margin: 10px 20px;
+    flex: 0 0 300px;
+    padding: 10px;
 }
+
+p.ands {
+    margin: 0 15px;
+    padding: 0;
+    flex: 0 0 60px;
+    text-align: center;
+}
+
 
 textarea {
     resize: none;
-    width: 90%;
-    padding: 10px;
-    margin: 10px;
 }
 
 input, textarea {
@@ -327,30 +372,10 @@ button:hover {
     background: #ddd;
 }
 
-.oldbutton {
-    width: 130px;
-    height: 50px;
-    margin: 0 auto;
-    background: slategray;
-}
-
-.oldbutton a {
-    color: white;
-    font-size: 20px;
-    display: block;
-    text-align: center;
-    font-family: 'Playfair Display', Serif;
-    text-transform: uppercase;
-    padding: 15px;
-}
-
-.oldbutton a:hover {
-    color: gold;
-}
-
 /* TESTIMONIALS */
 
 .testimonials {
+    display: none;
     color: slategray;
     text-align: center;
     font-style: italic;
@@ -362,8 +387,16 @@ footer {
     text-align: center;
     margin: 0;
     padding: 20px;
-    border-top: 1px solid slategray;
     font-size: 10px;
+    background: white;
+}
+
+
+@media only screen and (max-width: 1240px) {
+
+    p.ands {
+        flex: 1 0 100%;
+    }
 }
 
 @media only screen and (max-width: 614px) {
@@ -374,9 +407,8 @@ footer {
     }
 
     nav {
-        position: fixed;
-        opacity: 0.8;
         top: 0;
+        height: 60px;
     }
     
     nav ul {
@@ -392,7 +424,7 @@ footer {
     }
 
     nav ul li.top a {
-        width: 50px;
+        width: fit-content;
     }
 
     nav ul li.smalllogo {
@@ -401,45 +433,53 @@ footer {
 
     nav ul li.mobilemenu {
         display: block;
+        width: fit-content;
     }
 
     nav ul li.mobilemenu a {
         background-image: url(images/hamburger.svg);
-        background-size: 30px;
-        width: 40px;
+        padding: 10px;
+        margin-right: 20px;
+        width: 30px;
+        background-size: contain;
+        background-position: center center;
         background-repeat: no-repeat;
         text-indent: -99999px;
+        height: 100%;
     }
 
     main {
         margin-top: 70px;
     }
 
-    .about {
+/*     .about {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-    }
-    div.thumbnails {
-        flex-wrap: wrap;
-    }
+    } */
+
 
     figure div {
         width: 90%;
         height: auto;
     }
 
-    section {
-        width: 90%;
-    }
 
     .photo1 {
         width: 90%;
     }
     
+    .movies h1 {
+        display: block;
+    }
 
     section.enquire form {
-        width: 99%;
+        width: 80%;
     }
+
+    input.person {
+        flex: 0 0 80%;
+    }
+
 }

@@ -11,30 +11,32 @@
 </head>
 <body>
     <header>
+        <nav id="nav">
+            <ul>
+                <li class="top"><a href="#">Top</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#movies">movies</a></li>
+                <li class="smalllogo"><a href="#">Weddings on Film</a></li>
+                <li><a href="#">showreel</a></li>
+                <li><a href="#enquire">enquire</a></li>
+                <li class="mobilemenu">
+                    <a href="#nav">mobile menu</a>
+                    <ul>
+                        
+                    </ul>
+                </li>
+            </ul>
+        </nav>
         <div class="bgvideo">
+            <div class="banner">banner</div>
             <a class="logo" href="index.html">Weddings on Film</a>
             <a class="play" href="#">play</a>
             <a class="down" href="#about">down</a>
         </div>
+
+
     </header>
-
-    <nav id="nav">
-        <ul>
-            <li class="top"><a href="#">Top</a></li>
-            <li><a href="#about">about</a></li>
-            <li><a href="#movies">movies</a></li>
-            <li class="smalllogo"><a href="#">Weddings on Film</a></li>
-            <li><a href="#">showreel</a></li>
-            <li><a href="#enquire">enquire</a></li>
-            <li class="mobilemenu">
-                <a href="#nav">mobile menu</a>
-                <ul>
-                    
-                </ul>
-            </li>
-        </ul>
-    </nav>
-
+    
     <main>
         <section class="about" >
             <h1 id="about">About Us</h1>
@@ -67,26 +69,89 @@
         <section class="movies">
             <h1 id="movies">Movies</h1>
             <figure>
-                <a href="#"><img src="images/wedding1.jpeg" alt="Jack and Jill"></a>
+                <a href="#">
+                    <img src="images/wedding1.jpeg" alt="Jack and Jill">
+                    <img class="play" src="images/play2.png" alt="">
+                </a>
                 <figcaption>Jack and Jill</figcaption>
             </figure>
             <figure>
-                <a href="#"><img src="images/wedding2.jpeg" alt="Baz and Bez"></a>
+                <a href="#">
+                    <img src="images/wedding2.jpeg" alt="Baz and Bez">
+                    <img class="play" src="images/play2.png" alt="">
+                </a>
                 <figcaption>Baz and Bez</figcaption>
             </figure>
             <figure>
-            <a href="#"><img src="images/wedding3.jpg" alt="Shaz and Dave"></a>
+                <a href="#">
+                    <img src="images/wedding3.jpg" alt="Shaz and Dave">
+                    <img class="play" src="images/play2.png" alt="">
+                </a>
                 <figcaption>Shaz and Dave</figcaption>
             </figure>
         </section>
 
+        <article class="article1">
+            <h1 id="">About Us</h1>
+            <img class="photo1" src="images/photographer3.jpg" alt="">
+            <div class="about-text">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate erat massa, 
+                    ac porta nibh luctus non. Morbi congue erat nibh, sed volutpat lectus dapibus ac. 
+                    Praesent eget sem sed augue pellentesque lacinia rutrum et tortor. 
+                    nisl. 
+                </p>
+                <p>
+                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per 
+                    inceptos himenaeos. Proin sit amet mattis sapien, a maximus enim. Morbi aliquam 
+                    lacinia venenatis. Mauris a lorem blandit, suscipit sem at, feugiat nunc. Nulla eu 
+                    nulla ut tortor aliquam laoreet. 
+                </p>
+                <p>
+                    Curabitur feugiat ante sed leo molestie gravida. Aenean vitae sagittis odio, in maximus turpis.
+                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In quis 
+                    mollis massa. 
+                </p>
+                <p>
+                    Aenean aliquam orci vel leo eleifend porta. Suspendisse et facilisis arcu. Aenean efficitur eu 
+                    augue sit amet semper. Aenean placerat odio non velit mattis maximus.
+                </p>
+            </div>
+        </article>
+        <article class="article2">
+            <h1 id="">About Us</h1>
+            <div class="about-text">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate erat massa, 
+                    ac porta nibh luctus non. Morbi congue erat nibh, sed volutpat lectus dapibus ac. 
+                    Praesent eget sem sed augue pellentesque lacinia rutrum et tortor. 
+                    nisl. 
+                </p>
+                <p>
+                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per 
+                    inceptos himenaeos. Proin sit amet mattis sapien, a maximus enim. Morbi aliquam 
+                    lacinia venenatis. Mauris a lorem blandit, suscipit sem at, feugiat nunc. Nulla eu 
+                    nulla ut tortor aliquam laoreet. 
+                </p>
+                <p>
+                    Curabitur feugiat ante sed leo molestie gravida. Aenean vitae sagittis odio, in maximus turpis.
+                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In quis 
+                    mollis massa. 
+                </p>
+                <p>
+                    Aenean aliquam orci vel leo eleifend porta. Suspendisse et facilisis arcu. Aenean efficitur eu 
+                    augue sit amet semper. Aenean placerat odio non velit mattis maximus.
+                </p>
+            </div>
+        </article>
+
         <section class="enquire">
-            <h1 id="enquire">Enquire</h1>
             <form action="contactform.php" method="POST">
+                <h1 id="enquire">Enquire</h1>
                 <p>Celebrating the marriage of...</p>
-                <div class="names">
-                    <input type="text" name="person1" class="person"> and <input type="text" name="person2" class="person"> 
-                </div>
+                <input type="text" name="person1" class="person">
+                <p class="ands">and</p>
+                <input type="text" name="person2" class="person"> 
                 <input type="text" name="location" placeholder="Location of wedding...">
                 <input type="text" name="email" placeholder="Email address...">
                 <input type="number" name="phone" placeholder="Phone number...">
