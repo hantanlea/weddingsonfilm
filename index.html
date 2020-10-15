@@ -8,6 +8,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Playfair+Display+SC&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alluradllll&family=Amatic+SC:wght@400;700&family=Raleway&family=Architects+Daughter&family=Bad+Script&family=Cinzel:wght@400;600;900&family=Covered+By+Your+Grace&family=Gloria+Hallelujah&family=Gochi+Hand&family=Indie+Flower&family=Rock+Salt&family=Sacramento&family=Shadows+Into+Light&family=Special+Elite&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script>
+        /*Interactivity to determine when an animated element in in view. In view elements trigger our animation*/
+        $(document).ready(function() {
+
+        //window and animation items
+        var animation_elements = $.find('.animation-element');
+        var web_window = $(window);
+
+        //check to see if any animation containers are currently in view
+        function check_if_in_view() {
+        //get current window information
+        var window_height = web_window.height();
+        var window_top_position = web_window.scrollTop();
+        var window_bottom_position = (window_top_position + window_height);
+
+        //iterate through elements to see if its in view
+        $.each(animation_elements, function() {
+
+            //get the element sinformation
+            var element = $(this);
+            var element_height = $(element).outerHeight();
+            var element_top_position = $(element).offset().top;
+            var element_bottom_position = (element_top_position + element_height);
+
+            //check to see if this current container is visible (its viewable if it exists between the viewable space of the viewport)
+            if (element_top_position < window_bottom_position - 90) {
+            element.addClass('in-view');
+            } else {
+            element.removeClass('in-view');
+            }
+        });
+
+        }
+
+        //on or scroll, detect elements in view
+        $(window).on('scroll resize', function() {
+            check_if_in_view()
+        })
+        //trigger our scroll event on initial load
+        $(window).trigger('scroll');
+
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -33,13 +78,12 @@
             <a class="play" href="#">play</a>
             <a class="down" href="#about">down</a>
         </div>
-
-
     </header>
     
     <main>
-        <section class="about" >
-            <h1 id="about">About Us</h1>
+        <div id="about"></div>
+        <section class="about animation-element slide-up">
+            <h1>About Us</h1>
             <div class="about-text">
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate erat massa, 
@@ -65,24 +109,24 @@
             </div>
             <img class="photo1" src="images/photographer3.jpg" alt="">
         </section>
-
+        <div id="movies"></div>
         <section class="movies">
-            <h1 id="movies">Movies</h1>
-            <figure>
+            <h1>Movies</h1>
+            <figure class="animation-element slide-up">
                 <a href="#">
                     <img src="images/wedding1.jpeg" alt="Jack and Jill">
                     <img class="play" src="images/play2.png" alt="">
                 </a>
                 <figcaption>Jack and Jill</figcaption>
             </figure>
-            <figure>
+            <figure class="animation-element slide-up delay1">
                 <a href="#">
                     <img src="images/wedding2.jpeg" alt="Baz and Bez">
                     <img class="play" src="images/play2.png" alt="">
                 </a>
                 <figcaption>Baz and Bez</figcaption>
             </figure>
-            <figure>
+            <figure class="animation-element slide-up delay2">
                 <a href="#">
                     <img src="images/wedding3.jpg" alt="Shaz and Dave">
                     <img class="play" src="images/play2.png" alt="">
