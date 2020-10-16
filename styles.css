@@ -296,11 +296,12 @@ article {
 .enquire h1 {
     padding-top: 50px;
     margin-top: -50px;
+    margin-bottom: 40px;
 }
 
 section.enquire {
     height: fit-content;
-    background-image: url(images/texture3.jpg);
+    background-image: url(images/texture1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -320,6 +321,7 @@ section.enquire form {
 form p {
     flex: 1 0 100%;
     text-align: center;
+    color: white;
 }
 
 input, textarea {
