@@ -51,7 +51,7 @@ div.bgvideo {
     position: absolute;
     top: 0;
     left: 0;
-    filter: brightness(70%);
+    filter: brightness(60%);
 }
 
 /* div.banner {
@@ -133,19 +133,39 @@ a.play:hover {
 
 
 a.down {
-    display: none;
     position: absolute;
     width: 40px;
-    bottom: 100px;
+    bottom: 75px;
     height: 45px;
     left: 50%;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
-    background-image: url("images/arrow3.png");
+    background-image: url("images/down2.png");
     background-size: 25px;
     background-repeat: no-repeat;
     text-indent: -9999999px;
-    opacity: 0.5;
+    opacity: 0.6;
+    animation-name: bounce;
+    animation-iteration-count: infinite;
+    animation-duration: 700ms;
+    animation-timing-function: ease-out;
+    z-index: 999;
+/*     animation-name: fade-in-play;
+    animation-duration: 3s;
+    animation-delay: 4s;
+    animation-fill-mode: forwards; */
+}
+
+@keyframes bounce {
+    0% {
+        bottom: 75px;
+    }
+    50% {
+        bottom: 83px;
+    }
+    100% {
+        bottom: 75px;
+    }
 }
 
 /* NAVIGATION */
@@ -307,7 +327,7 @@ figcaption {
 figure img {
     width: 280px;
     height: auto;
-    filter: brightness(80%);
+    filter: brightness(70%);
     transition: all 0.5s ease-in-out 0.01s;
     -webkit-transition: all 0.5s ease-in-out 0.01s;
     -o-transition: all 0.5s ease-in-out 0.01s;
