@@ -83,7 +83,7 @@ a.logo {
     animation-fill-mode: forwards;
     animation-name: fade-in;
     animation-duration: 5s;
-    animation-delay: 0;
+    animation-delay: 2s;
 }
 
 @keyframes fade-in {
@@ -159,7 +159,7 @@ nav {
     opacity: 0;
     z-index: 10;
     animation-name: slide-down;
-    animation-delay: 2s;
+    animation-delay: 500ms;
     animation-duration: 3s;
     animation-fill-mode: forwards;
 }
