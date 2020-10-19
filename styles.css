@@ -1,3 +1,10 @@
+/* FONTS */
+
+@font-face {
+    font-family: hachiko;
+    src: url(fonts/Hachiko.ttf);
+}
+
 /* RESET */
 
 * {
@@ -77,8 +84,8 @@ a.logo {
     text-align: center;
     word-spacing: 999999px;
     color: white;
-    font-family: 'Sacramento', cursive; 
-    font-size: 40px;
+    font-family: hachiko, cursive; 
+    font-size: 45px;
     opacity: 0;
     animation-fill-mode: forwards;
     animation-name: fade-in;
@@ -99,9 +106,9 @@ a.play {
     display: block;
     opacity: 0;
     position: relative;
-    width: 80px;
+    width: 70px;
     top: 35vh;
-    height: 80px;
+    height: 70px;
     margin: 0 auto;
     background-image: url("images/play2.png");
     background-size: 100%;
