@@ -7,9 +7,22 @@
 
 @font-face {
     font-family: 'High Handmade';
-    src: url('fonts/High Handmade.otf')
+    src: url('fonts/High Handmade.otf');
 }
 
+@font-face {
+    font-family: 'Breathing';
+    src: url('fonts/Breathing.ttf');
+}
+
+@font-face {
+    font-family: 'Pretty Queen';
+    src: url('fonts/Pretty Queen.ttf');
+}
+@font-face {
+    font-family: 'Austin';
+    src: url('fonts/Austin.ttf');
+}
 /* RESET */
 
 * {
@@ -74,7 +87,7 @@ a.logo {
     display: block;
     position: relative;
     top: 35vh;
-    width: 140px;
+    width: 200px;
     margin: 0 auto;
     padding: 10px;
     text-align: center;
@@ -90,8 +103,8 @@ a.logo {
 a.logo h1 {
     font-weight: normal;
     color: white;
-    font-family: 'high handmade', cursive; 
-    font-size: 40px;
+    font-family: 'Pretty Queen', cursive; 
+    font-size: 45px;
 }
 
 @keyframes fade-in {
@@ -107,9 +120,9 @@ a.play {
     display: block;
     opacity: 0;
     position: relative;
-    width: 80px;
-    top: 35vh;
-    height: 80px;
+    width: 50px;
+    top: 40vh;
+    height: 50px;
     margin: 0 auto;
     background-image: url("images/play2.png");
     background-size: 100%;
