@@ -77,7 +77,7 @@
 <!--                 <source src="images/coverr1.mp4" type="video/mp4"> -->
             </video>
 <!--             <div class="banner">banner</div> -->
-            <a class="logo" href="index.html">Weddings on Film</a>
+            <a class="logo" href="index.html"><h1>Weddings on Film</h1></a>
             <a class="play" href="#">play</a>
             <a class="down" href="#about">down</a>
         </div>
@@ -86,7 +86,7 @@
     <main>
         <div id="about"></div>
         <section class="about animation-element slide-up">
-            <h1>About Us</h1>
+            <h2>About Us</h2>
             <div class="about-text">
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate erat massa, 
@@ -114,7 +114,7 @@
         </section>
         <div id="movies"></div>
         <section class="movies">
-            <h1>Movies</h1>
+            <h2>Movies</h2>
             <figure class="animation-element slide-up">
                 <a href="#">
                     <img src="images/wedding1.jpeg" alt="Jack and Jill">
@@ -139,7 +139,7 @@
         </section>
 
         <article class="article1">
-            <h1 id="">About Us</h1>
+            <h2 id="">About Us</h2>
             <img class="photo1" src="images/photographer3.jpg" alt="">
             <div class="about-text">
                 <p>
@@ -166,7 +166,7 @@
             </div>
         </article>
         <article class="article2">
-            <h1 id="">About Us</h1>
+            <h2 id="">About Us</h2>
             <div class="about-text">
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate erat massa, 
@@ -194,15 +194,21 @@
 
         <section class="enquire">
             <form action="contactform.php" method="POST">
-                <h1 id="enquire">Enquire</h1>
-                <p>Celebrating the marriage of...</p>
-                <input type="text" name="person1" class="person">
-                <p class="ands">and</p>
-                <input type="text" name="person2" class="person"> 
-                <input type="text" name="location" placeholder="Location of wedding...">
-                <input type="text" name="email" placeholder="Email address...">
-                <input type="number" name="phone" placeholder="Phone number...">
-                <textarea name="message" id="" cols="30" rows="10" placeholder="Tell us about your wedding..."></textarea>
+                <h2 id="enquire">Enquire</h2>
+                <label for="name1">Celebrating the marriage of...</label>
+                <input type="text" id='name1' name="name1" class="person">
+                <label for="name2">and</label>
+                <input type="text" id="name2" name="name2" class="person"> 
+                <label for="date">on the date</label>
+                <input type="date" id="date">
+                <label for="location">Location of wedding</label>
+                <input type="text" id="location" name="location" placeholder="Location of wedding...">
+                <label for="email">Email:</label>
+                <input id="email" type="text" name="email" placeholder="Email address...">
+                <label for="phone">Phone Number:</label>
+                <input id="phone" type="number" name="phone" placeholder="Phone number...">
+                <label for="description">Tell us about your wedding</label>
+                <textarea name="message" id="description" cols="30" rows="10" placeholder="Tell us about your wedding..."></textarea>
                 <button type="submit" name="submit">Submit</button>
             </form>
         </section>

@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: hachiko;
-    src: url(fonts/Hachiko.ttf);
+    src: url('fonts/Hachiko.ttf');
 }
 
 @font-face {
@@ -16,26 +16,18 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
-
-    font-family: 'Raleway', 'Sacramento';
+    font-family: Raleway, sans-serif;
 }
 
 /* BASICS */
 
-body {
-    color: darkslategray;
-    padding: 0;
-    margin: 0;
-} 
-
 p {
     line-height: 1.5;
     margin-bottom: 25px;
+    color: darkslategray;
 }
 
-/* padding margin trick to allow fixed nav bar */
-
-h1 {
+h2 {
     font-family: 'Playfair Display', serif;
     color: peru;
     text-transform: uppercase;
@@ -88,14 +80,18 @@ a.logo {
     text-align: center;
     line-height: 50px;
     word-spacing: 999999px;
-    color: white;
-    font-family: hachiko, cursive; 
-    font-size: 40px;
     opacity: 0;
     animation-fill-mode: forwards;
     animation-name: fade-in;
     animation-duration: 5s;
     animation-delay: 2s;
+}
+
+a.logo h1 {
+    font-weight: normal;
+    color: white;
+    font-family: 'high handmade', cursive; 
+    font-size: 40px;
 }
 
 @keyframes fade-in {
@@ -269,32 +265,26 @@ main {
     position: relative;
 }
 section.about {
-    padding: 70px 0;
-    margin: 0 auto 100px auto;
+    padding: 70px 50px;
+    margin: -130px auto 100px auto;
     background: white;
-}
-
-.about h1 {
-    padding-bottom: 50px;
-    padding-top: 60px;
-    margin-top: -60px;
-}
-
-section.about {
-    margin-top: -130px;
     max-width: 1000px;
-    padding-left: 50px;
-    padding-right: 50px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
     z-index: 10;
 }
 
+/* padding margin trick to fix nav links */
+.about h2 {
+    padding-bottom: 50px;
+    padding-top: 60px;
+    margin-top: -60px;
+}
+
 .about-text {
     max-width: 400px;
 }
-
 
 div.about-photos {
     max-width: 400px;
@@ -307,12 +297,11 @@ div.about-photos {
 
 /* MOVIES */
 
-.movies h1 {
+.movies h2 {
     text-indent: -999999px;
     padding-top: 100px;
     margin-top: -140px;
 }
-
 
 section.movies {
     display: flex;
@@ -327,7 +316,7 @@ figure {
     position: relative;
     width: fit-content;
     height: fit-content;
-    margin: 0 50px;
+    margin: 0 50px 40px 50px;
     text-align: center;
 }
 
@@ -341,10 +330,10 @@ figure img {
     width: 280px;
     height: auto;
     filter: brightness(70%);
-    transition: all 0.5s ease-out 0.01s;
-    -webkit-transition: all 0.5s ease-out 0.01s;
-    -o-transition: all 0.5s ease-out 0.01s;
-    -moz-transition: all 0.5s ease-out 0.01s;
+    transition: all 0.5s ease-in-out 0.01s;
+    -webkit-transition: all 0.5s ease-in-out 0.01s;
+    -o-transition: all 0.5s ease-in-out 0.01s;
+    -moz-transition: all 0.5s ease-in-out 0.01s;
 }
 
 figure img.play {
@@ -376,7 +365,7 @@ article {
 
 /* ENQUIRE */
 
-.enquire h1 {
+.enquire h2 {
     padding-top: 50px;
     margin-top: -50px;
     margin-bottom: 40px;
@@ -408,17 +397,21 @@ section.enquire {
 section.enquire form {
     width: 60%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 60px 20px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: baseline;
 }
 
-form p {
+form label {
     flex: 1 0 100%;
     text-align: center;
-    color: white;
+    color: #333;
+}
+
+label {
+    display: none;
 }
 
 input, textarea {
@@ -434,7 +427,7 @@ input.person {
     padding: 10px;
 }
 
-p.ands {
+p.label {
     margin: 0 15px;
     padding: 0;
     flex: 0 0 60px;
@@ -507,8 +500,25 @@ footer {
 
 @media only screen and (max-width: 1240px) {
 
+    section.enquire form {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+    }
+
+    input.person {
+        flex: 0 0 auto;
+    }
     p.ands {
-        flex: 1 0 100%;
+        flex: 0 0 100%;
+    } 
+    
+    .animation-element.slide-up.delay1 {
+        transition-delay: 0;
+    }
+
+    .animation-element.slide-up.delay2 {
+        transition-delay: 0;
     }
 }
 
@@ -519,9 +529,21 @@ footer {
         position: relative;
     }
 
+    a.logo {
+        top: 30vh;
+    }
+
+    a.play {
+        top: 30vh;
+    }
+
+    a.down {
+        display: none;
+    }
+
     nav {
         top: 0;
-        height: 60px;
+        height: 50px;
     }
     
     nav ul {
@@ -551,14 +573,13 @@ footer {
 
     nav ul li.mobilemenu a {
         background-image: url(images/hamburger.svg);
-        padding: 10px;
-        margin-right: 20px;
-        width: 30px;
+        margin-right: 10px;
+        width: 5px;
+        height: 5px;
         background-size: contain;
         background-position: center center;
         background-repeat: no-repeat;
         text-indent: -99999px;
-        height: 100%;
     }
 
     main {
@@ -583,7 +604,7 @@ footer {
         width: 90%;
     }
     
-    .movies h1 {
+    .movies h2 {
         display: block;
     }
 
