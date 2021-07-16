@@ -98,7 +98,7 @@
   <div id="video-popout">
     <div id="frame">
       <button id="close-popout">X</button>
-      <video id="showreel" controls src="resources/video/2021 Weddings On Film Reel 24f750.m4v"></video>
+      <video id="showreel" controls src="resources/video/play-showreel.m4v"></video>
     </div>
   </div>
   <nav id="nav">
@@ -119,7 +119,7 @@
   </nav>
   <header>
     <div class="bgvideo">
-      <video playsinline autoplay muted loop poster="images/fallback.jpg" id="bgvid" src="resources/video/2021 Weddings On Film Reel 24f750.m4v">
+      <video playsinline autoplay muted loop poster="images/fallback.jpg" id="bgvid" src="resources/video/play-showreel.m4v">
         <!--                 <source src="images/coverr1.mp4" type="video/mp4"> -->
       </video>
       <!--             <div class="banner">banner</div> -->
@@ -162,27 +162,27 @@
     </section>
     <div id="movies"></div>
     <section class="movies">
-      <h2>Movies</h2>
-      <figure class="animation-element slide-up">
+      <h2>Recent Weddings</h2>
+      <figure id="nicola" class="animation-element slide-up">
         <a href="#">
-          <img src="resources/KimSteven-lg.png" alt="Kim & Steven">
+          <img src="resources/nicolatom-lg.png" alt="Nicola & Tom">
           <img class="play" src="images/play2.png" alt="">
         </a>
-        <figcaption>Kim & Steven</figcaption>
+        <figcaption>Nicola & Tom</figcaption>
       </figure>
-      <figure class="animation-element slide-up delay1">
+      <figure id ="mike" class="animation-element slide-up delay1">
         <a href="#">
           <img src="resources/mikefiona-lg.png" alt="Mike & Fiona">
           <img class="play" src="images/play2.png" alt="">
         </a>
         <figcaption>Mike & Fiona</figcaption>
       </figure>
-      <figure class="animation-element slide-up delay2">
+      <figure id="kim" class="animation-element slide-up delay2">
         <a href="#">
-          <img src="resources/nicolatom-lg.png" alt="Nicola & Tom">
+          <img src="resources/KimSteven-lg.png" alt="Kim & Steven">
           <img class="play" src="images/play2.png" alt="">
         </a>
-        <figcaption>Nicola & Tom</figcaption>
+        <figcaption>Kim & Steven</figcaption>
       </figure>
     </section>
 
@@ -277,6 +277,8 @@
 </body>
 <script>
   function pressPlay() {
+    var vid = "/resources/video/" + this.id + ".m4v";
+    document.getElementById('showreel').src = vid;
     document.getElementById('video-popout').style.display = "flex";
     document.getElementById('bgvid').pause();
     var currentVid = document.getElementById('showreel');
@@ -293,6 +295,15 @@
   playShowreel.addEventListener('click', pressPlay);
   var closePopou = document.getElementById('close-popout');
   closePopou.addEventListener('click', closePopout);
+
+  var kim = document.getElementById('kim');
+  kim.addEventListener('click', pressPlay);
+
+  var mike = document.getElementById('mike');
+  mike.addEventListener('click', pressPlay);
+
+  var nicola = document.getElementById('nicola');
+  nicola.addEventListener('click', pressPlay);
 </script>
 </html>
 
