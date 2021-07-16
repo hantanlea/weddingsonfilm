@@ -23,6 +23,12 @@
     font-family: 'Austin';
     src: url('fonts/Austin.ttf');
 }
+
+@font-face {
+    font-family: 'NomosInlineGrunge';
+    src: url('fonts/NomosInlineGrunge.ttf');
+}
+
 /* RESET */
 
 * {
@@ -87,7 +93,8 @@ a.logo {
     display: block;
     position: relative;
     top: 35vh;
-    width: 200px;
+    width: 400px;
+    height: 150px;
     margin: 0 auto;
     padding: 10px;
     text-align: center;
@@ -98,6 +105,12 @@ a.logo {
     animation-name: fade-in;
     animation-duration: 5s;
     animation-delay: 2s;
+    text-indent: 0;
+    /* background-image: url(images/logo29.png); */
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
 }
 
 a.logo h1 {
@@ -106,6 +119,10 @@ a.logo h1 {
     font-family: 'Pretty Queen', cursive; 
     font-size: 45px;
 }
+
+/* a.logo h1::first-line {
+    font-size: 55px;
+} */
 
 @keyframes fade-in {
     0% {
@@ -303,9 +320,10 @@ div.about-photos {
     max-width: 400px;
 }
 
-.about-photos img.photo1 {
+.about-photos img {
     width: 100%;
     height: auto;
+    box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2), 0 0px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* MOVIES */
@@ -347,6 +365,7 @@ figure img {
     -webkit-transition: all 0.5s ease-in-out 0.01s;
     -o-transition: all 0.5s ease-in-out 0.01s;
     -moz-transition: all 0.5s ease-in-out 0.01s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 figure img.play {

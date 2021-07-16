@@ -1,228 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weddings on Film</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Playfair+Display+SC&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Alluradllll&family=Amatic+SC:wght@400;700&family=Raleway&family=Architects+Daughter&family=Bad+Script&family=Cinzel:wght@400;600;900&family=Covered+By+Your+Grace&family=Gloria+Hallelujah&family=Gochi+Hand&family=Indie+Flower&family=Rock+Salt&family=Sacramento&family=Shadows+Into+Light&family=Special+Elite&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
-    <script>
-        /*Interactivity to determine when an animated element in in view. In view elements trigger our animation*/
-        $(document).ready(function() {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weddings on Film</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Playfair+Display+SC&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alluradllll&family=Amatic+SC:wght@400;700&family=Raleway&family=Architects+Daughter&family=Bad+Script&family=Cinzel:wght@400;600;900&family=Covered+By+Your+Grace&family=Gloria+Hallelujah&family=Gochi+Hand&family=Indie+Flower&family=Rock+Salt&family=Sacramento&family=Shadows+Into+Light&family=Special+Elite&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
 
-        //window and animation items
-        var animation_elements = $.find('.animation-element');
-        var web_window = $(window);
+    /*Interactivity to determine when an animated element in in view. In view elements trigger our animation*/
+    $(document).ready(function () {
 
-        //check to see if any animation containers are currently in view
-        function check_if_in_view() {
+      //window and animation items
+      var animation_elements = $.find('.animation-element');
+      var web_window = $(window);
+
+      //check to see if any animation containers are currently in view
+      function check_if_in_view() {
         //get current window information
         var window_height = web_window.height();
         var window_top_position = web_window.scrollTop();
         var window_bottom_position = (window_top_position + window_height);
 
         //iterate through elements to see if its in view
-        $.each(animation_elements, function() {
+        $.each(animation_elements, function () {
 
-            //get the element sinformation
-            var element = $(this);
-            var element_height = $(element).outerHeight();
-            var element_top_position = $(element).offset().top;
-            var element_bottom_position = (element_top_position + element_height);
+          //get the element sinformation
+          var element = $(this);
+          var element_height = $(element).outerHeight();
+          var element_top_position = $(element).offset().top;
+          var element_bottom_position = (element_top_position + element_height);
 
-            //check to see if this current container is visible (its viewable if it exists between the viewable space of the viewport)
-            if (element_top_position < window_bottom_position - 90) {
+          //check to see if this current container is visible (its viewable if it exists between the viewable space of the viewport)
+          if (element_top_position < window_bottom_position - 90) {
             element.addClass('in-view');
-            } else {
+          } else {
             element.removeClass('in-view');
-            }
+          }
         });
 
-        }
+      }
 
-        //on or scroll, detect elements in view
-        $(window).on('scroll resize', function() {
-            check_if_in_view()
-        })
-        //trigger our scroll event on initial load
-        $(window).trigger('scroll');
+      //on or scroll, detect elements in view
+      $(window).on('scroll resize', function () {
+        check_if_in_view()
+      })
+      //trigger our scroll event on initial load
+      $(window).trigger('scroll');
 
-        });
-    </script>
-</head>
-<body>
-    <nav id="nav">
-        <ul>
-            <li class="top"><a href="#">Top</a></li>
-            <li><a href="#about">about</a></li>
-            <li><a href="#movies">movies</a></li>
-            <li class="smalllogo"><a href="#">Weddings on Film</a></li>
-            <li><a href="#">showreel</a></li>
-            <li><a href="#enquire">enquire</a></li>
-            <li class="mobilemenu">
-                <a href="#nav">mobile menu</a>
-                <ul>
-                    
-                </ul>
-            </li>
-        </ul>
-    </nav>
-    <header>
-        <div class="bgvideo">
-            <video playsinline autoplay muted loop poster="images/fallback.jpg" id="bgvid" src="images/coverr1.mp4">
-<!--                 <source src="images/coverr1.mp4" type="video/mp4"> -->
-            </video>
-<!--             <div class="banner">banner</div> -->
-            <a class="logo" href="index.html"><h1>Weddings on Film</h1></a>
-            <a class="play" href="#">play</a>
-            <a class="down" href="#about">down</a>
-        </div>
-    </header>
+    });
+
+/*         /*Interactivity to determine when an animated element in in view. In view elements trigger our animation
+            document.addEventListener("DOMContentLoaded", function() {
     
-    <main>
-        <div id="about"></div>
-        <section class="about animation-element slide-up">
-            <h2>About Us</h2>
-            <div class="about-text">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate erat massa, 
-                    ac porta nibh luctus non. Morbi congue erat nibh, sed volutpat lectus dapibus ac. 
-                    Praesent eget sem sed augue pellentesque lacinia rutrum et tortor. 
-                    nisl. 
-                </p>
-                <p>
-                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per 
-                    inceptos himenaeos. Proin sit amet mattis sapien, a maximus enim. Morbi aliquam 
-                    lacinia venenatis. Mauris a lorem blandit, suscipit sem at, feugiat nunc. Nulla eu 
-                    nulla ut tortor aliquam laoreet. 
-                </p>
-                <p>
-                    Curabitur feugiat ante sed leo molestie gravida. Aenean vitae sagittis odio, in maximus turpis.
-                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In quis 
-                    mollis massa. 
-                </p>
-                <p>
-                    Aenean aliquam orci vel leo eleifend porta. Suspendisse et facilisis arcu. Aenean efficitur eu 
-                    augue sit amet semper. Aenean placerat odio non velit mattis maximus.
-                </p>
-            </div>
-            <img class="photo1" src="images/photographer3.jpg" alt="">
-        </section>
-        <div id="movies"></div>
-        <section class="movies">
-            <h2>Movies</h2>
-            <figure class="animation-element slide-up">
-                <a href="#">
-                    <img src="images/wedding1.jpeg" alt="Jack and Jill">
-                    <img class="play" src="images/play2.png" alt="">
-                </a>
-                <figcaption>Jack and Jill</figcaption>
-            </figure>
-            <figure class="animation-element slide-up delay1">
-                <a href="#">
-                    <img src="images/wedding2.jpeg" alt="Baz and Bez">
-                    <img class="play" src="images/play2.png" alt="">
-                </a>
-                <figcaption>Baz and Bez</figcaption>
-            </figure>
-            <figure class="animation-element slide-up delay2">
-                <a href="#">
-                    <img src="images/wedding3.jpg" alt="Shaz and Dave">
-                    <img class="play" src="images/play2.png" alt="">
-                </a>
-                <figcaption>Shaz and Dave</figcaption>
-            </figure>
-        </section>
+            let animation_elements = document.querySelectorAll('.animation-element');
+    
+            function check_if_in_view() {
+                var window_bottom_position = (window.scrollY + window.innerHeight);
+    
+                //iterate through elements to see if its in view
+                Array.from(animation_elements).forEach(function(element) {
+    
+                  if (!(element.classList.contains('in-view'))) {
+                    //get the element information
+                    var element_top_position = element.parentElement.offsetTop; //$(element).offset().top;
+                    var element_bottom_position = (element_top_position + element.offsetHeight);
+    
+                    if (element_top_position < window_bottom_position - 90) {
+                    element.classList.add('in-view');
+                    } else {
+                    element.classList.remove('in-view');
+                    }
+                  }
+                });
+    
+            }
+    
+            //on or scroll, detect elements in view
+            window.addEventListener('scroll', function() {
+                check_if_in_view()
+            })
+            //trigger our scroll event on initial load
+            check_if_in_view();
+    
+            }); */
+  </script>
+</head>
 
-        <article class="article1">
-            <h2 id="">About Us</h2>
-            <img class="photo1" src="images/photographer3.jpg" alt="">
-            <div class="about-text">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate erat massa, 
-                    ac porta nibh luctus non. Morbi congue erat nibh, sed volutpat lectus dapibus ac. 
-                    Praesent eget sem sed augue pellentesque lacinia rutrum et tortor. 
-                    nisl. 
-                </p>
-                <p>
-                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per 
-                    inceptos himenaeos. Proin sit amet mattis sapien, a maximus enim. Morbi aliquam 
-                    lacinia venenatis. Mauris a lorem blandit, suscipit sem at, feugiat nunc. Nulla eu 
-                    nulla ut tortor aliquam laoreet. 
-                </p>
-                <p>
-                    Curabitur feugiat ante sed leo molestie gravida. Aenean vitae sagittis odio, in maximus turpis.
-                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In quis 
-                    mollis massa. 
-                </p>
-                <p>
-                    Aenean aliquam orci vel leo eleifend porta. Suspendisse et facilisis arcu. Aenean efficitur eu 
-                    augue sit amet semper. Aenean placerat odio non velit mattis maximus.
-                </p>
-            </div>
-        </article>
-        <article class="article2">
-            <h2 id="">About Us</h2>
-            <div class="about-text">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate erat massa, 
-                    ac porta nibh luctus non. Morbi congue erat nibh, sed volutpat lectus dapibus ac. 
-                    Praesent eget sem sed augue pellentesque lacinia rutrum et tortor. 
-                    nisl. 
-                </p>
-                <p>
-                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per 
-                    inceptos himenaeos. Proin sit amet mattis sapien, a maximus enim. Morbi aliquam 
-                    lacinia venenatis. Mauris a lorem blandit, suscipit sem at, feugiat nunc. Nulla eu 
-                    nulla ut tortor aliquam laoreet. 
-                </p>
-                <p>
-                    Curabitur feugiat ante sed leo molestie gravida. Aenean vitae sagittis odio, in maximus turpis.
-                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In quis 
-                    mollis massa. 
-                </p>
-                <p>
-                    Aenean aliquam orci vel leo eleifend porta. Suspendisse et facilisis arcu. Aenean efficitur eu 
-                    augue sit amet semper. Aenean placerat odio non velit mattis maximus.
-                </p>
-            </div>
-        </article>
+<body>
+  <nav id="nav">
+    <ul>
+      <li class="top"><a href="#">Top</a></li>
+      <li><a href="#about">about</a></li>
+      <li><a href="#movies">movies</a></li>
+      <li class="smalllogo"><a href="#">Weddings on Film</a></li>
+      <li><a href="#">showreel</a></li>
+      <li><a href="#enquire">enquire</a></li>
+      <li class="mobilemenu">
+        <a href="#nav">mobile menu</a>
+        <ul>
 
-        <section class="enquire">
-            <form action="contactform.php" method="POST">
-                <h2 id="enquire">Enquire</h2>
-                <label for="name1">Celebrating the marriage of...</label>
-                <input type="text" id='name1' name="name1" class="person">
-                <label for="name2">and</label>
-                <input type="text" id="name2" name="name2" class="person"> 
-                <label for="date">on the date</label>
-                <input type="date" id="date">
-                <label for="location">Location of wedding</label>
-                <input type="text" id="location" name="location" placeholder="Location of wedding...">
-                <label for="email">Email:</label>
-                <input id="email" type="text" name="email" placeholder="Email address...">
-                <label for="phone">Phone Number:</label>
-                <input id="phone" type="number" name="phone" placeholder="Phone number...">
-                <label for="description">Tell us about your wedding</label>
-                <textarea name="message" id="description" cols="30" rows="10" placeholder="Tell us about your wedding..."></textarea>
-                <button type="submit" name="submit">Submit</button>
-            </form>
-        </section>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <header>
+    <div class="bgvideo">
+      <video playsinline autoplay muted loop poster="images/fallback.jpg" id="bgvid" src="images/coverr1.mp4">
+        <!--                 <source src="images/coverr1.mp4" type="video/mp4"> -->
+      </video>
+      <!--             <div class="banner">banner</div> -->
+      <a class="logo" href="index.html">
+        <h1>Weddings on Film</h1>
+      </a>
+      <a class="play" href="#">play</a>
+      <a class="down" href="#about">down</a>
+    </div>
+  </header>
 
-        <section class="testimonials">
-            <p>
-                "Yeah it was well good like they done well. I'll definitely use them again next time."
-            </p>
-        </section>
+  <main>
+    <div id="about"></div>
+    <section class="about animation-element slide-up">
+      <h2>About Us</h2>
+      <div class="about-text">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate erat massa,
+          ac porta nibh luctus non. Morbi congue erat nibh, sed volutpat lectus dapibus ac.
+          Praesent eget sem sed augue pellentesque lacinia rutrum et tortor.
+          nisl.
+        </p>
+        <p>
+          Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+          inceptos himenaeos. Proin sit amet mattis sapien, a maximus enim. Morbi aliquam
+          lacinia venenatis. Mauris a lorem blandit, suscipit sem at, feugiat nunc. Nulla eu
+          nulla ut tortor aliquam laoreet.
+        </p>
+        <p>
+          Curabitur feugiat ante sed leo molestie gravida. Aenean vitae sagittis odio, in maximus turpis.
+          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In quis
+          mollis massa.
+        </p>
+        <p>
+          Aenean aliquam orci vel leo eleifend porta. Suspendisse et facilisis arcu. Aenean efficitur eu
+          augue sit amet semper. Aenean placerat odio non velit mattis maximus.
+        </p>
+      </div>
+      <img class="photo1" src="images/photographer3.jpg" alt="">
+    </section>
+    <div id="movies"></div>
+    <section class="movies">
+      <h2>Movies</h2>
+      <figure class="animation-element slide-up">
+        <a href="#">
+          <img src="images/wedding1.jpeg" alt="Jack and Jill">
+          <img class="play" src="images/play2.png" alt="">
+        </a>
+        <figcaption>Jack and Jill</figcaption>
+      </figure>
+      <figure class="animation-element slide-up delay1">
+        <a href="#">
+          <img src="images/wedding2.jpeg" alt="Baz and Bez">
+          <img class="play" src="images/play2.png" alt="">
+        </a>
+        <figcaption>Baz and Bez</figcaption>
+      </figure>
+      <figure class="animation-element slide-up delay2">
+        <a href="#">
+          <img src="images/wedding3.jpg" alt="Shaz and Dave">
+          <img class="play" src="images/play2.png" alt="">
+        </a>
+        <figcaption>Shaz and Dave</figcaption>
+      </figure>
+    </section>
 
-    </main>
+    <article class="article1">
+      <h2 id="">About Us</h2>
+      <img class="photo1" src="images/photographer3.jpg" alt="">
+      <div class="about-text">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate erat massa,
+          ac porta nibh luctus non. Morbi congue erat nibh, sed volutpat lectus dapibus ac.
+          Praesent eget sem sed augue pellentesque lacinia rutrum et tortor.
+          nisl.
+        </p>
+        <p>
+          Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+          inceptos himenaeos. Proin sit amet mattis sapien, a maximus enim. Morbi aliquam
+          lacinia venenatis. Mauris a lorem blandit, suscipit sem at, feugiat nunc. Nulla eu
+          nulla ut tortor aliquam laoreet.
+        </p>
+        <p>
+          Curabitur feugiat ante sed leo molestie gravida. Aenean vitae sagittis odio, in maximus turpis.
+          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In quis
+          mollis massa.
+        </p>
+        <p>
+          Aenean aliquam orci vel leo eleifend porta. Suspendisse et facilisis arcu. Aenean efficitur eu
+          augue sit amet semper. Aenean placerat odio non velit mattis maximus.
+        </p>
+      </div>
+    </article>
+    <article class="article2">
+      <h2 id="">About Us</h2>
+      <div class="about-text">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate erat massa,
+          ac porta nibh luctus non. Morbi congue erat nibh, sed volutpat lectus dapibus ac.
+          Praesent eget sem sed augue pellentesque lacinia rutrum et tortor.
+          nisl.
+        </p>
+        <p>
+          Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+          inceptos himenaeos. Proin sit amet mattis sapien, a maximus enim. Morbi aliquam
+          lacinia venenatis. Mauris a lorem blandit, suscipit sem at, feugiat nunc. Nulla eu
+          nulla ut tortor aliquam laoreet.
+        </p>
+        <p>
+          Curabitur feugiat ante sed leo molestie gravida. Aenean vitae sagittis odio, in maximus turpis.
+          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In quis
+          mollis massa.
+        </p>
+        <p>
+          Aenean aliquam orci vel leo eleifend porta. Suspendisse et facilisis arcu. Aenean efficitur eu
+          augue sit amet semper. Aenean placerat odio non velit mattis maximus.
+        </p>
+      </div>
+    </article>
 
-    <footer>
-        <p>&#169 Weddings on Film</p>
-    </footer>
+    <section class="enquire">
+      <form action="contactform.php" method="POST">
+        <h2 id="enquire">Enquire</h2>
+        <label for="name1">Celebrating the marriage of...</label>
+        <input type="text" id='name1' name="name1" class="person">
+        <label for="name2">and</label>
+        <input type="text" id="name2" name="name2" class="person">
+        <label for="date">on the date</label>
+        <input type="date" id="date">
+        <label for="location">Location of wedding</label>
+        <input type="text" id="location" name="location" placeholder="Location of wedding...">
+        <label for="email">Email:</label>
+        <input id="email" type="text" name="email" placeholder="Email address...">
+        <label for="phone">Phone Number:</label>
+        <input id="phone" type="number" name="phone" placeholder="Phone number...">
+        <label for="description">Tell us about your wedding</label>
+        <textarea name="message" id="description" cols="30" rows="10"
+          placeholder="Tell us about your wedding..."></textarea>
+        <button type="submit" name="submit">Submit</button>
+      </form>
+    </section>
+
+    <section class="testimonials">
+      <p>
+        "Yeah it was well good like they done well. I'll definitely use them again next time."
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&#169 Weddings on Film</p>
+  </footer>
 </body>
+
 </html>
