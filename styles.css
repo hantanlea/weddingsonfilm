@@ -74,7 +74,7 @@ div.bgvideo {
     position: absolute;
     top: 0;
     left: 0;
-    filter: brightness(60%);
+    filter: brightness(40%);
 }
 
 /* div.banner {
@@ -258,7 +258,7 @@ nav li {
 nav a {
     display: block;
     width: 120px;
-    padding: 20px;
+    padding: 10px;
     color: peru;
     text-transform: uppercase;
     font-size: 16px;
@@ -295,7 +295,7 @@ main {
     position: relative;
 }
 section.about {
-    padding: 70px 50px;
+    padding: 50px 50px;
     margin: -130px auto 100px auto;
     background: white;
     max-width: 1000px;
