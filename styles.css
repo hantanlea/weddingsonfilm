@@ -338,7 +338,7 @@ section.movies {
     justify-content: center;
     align-content: center;
     width: 100%;
-    margin-bottom: 180px;
+    margin-bottom: 80px;
 }
 
 figure {
@@ -400,20 +400,22 @@ article {
 /* ENQUIRE */
 
 .enquire h2 {
-    padding-top: 50px;
-    margin-top: -50px;
+    padding-top: 30px;
+    margin-top: -30px;
     margin-bottom: 40px;
 }
 
 section.enquire {
     background-color: transparent;
     height: fit-content;
-    background-image: url(images/texture3.jpg);
+    width: 70%;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    margin-bottom: 0;
+    background-color: rgb(250, 250, 250);
+    margin: 20px auto 0 auto;
     position: relative;
+
 }
 
 /* .enquire video {
@@ -429,9 +431,9 @@ section.enquire {
 } */
 
 section.enquire form {
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
-    padding: 60px 20px;
+    padding: 30px 20px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -449,9 +451,10 @@ label {
 }
 
 .enquire h3 {
-  width: 80%;
+  flex: 0 1 100%;
   text-align: center;
   color: #333;
+  margin-bottom: 10px;
 }
 
 .enquire p {
@@ -460,14 +463,20 @@ label {
 
 input, textarea {
     padding: 10px;
-    flex: 0 0 100%; 
+    flex: 0 0 90%; 
     margin: 10px 0;
     opacity: 1;
     background: white;
+    color: peru;
+}
+
+input {
+  flex: 0 0 250px;
+  margin: 10px 20px;
 }
 
 input.person {
-    flex: 0 0 300px;
+    flex: 0 0 200px;
     padding: 10px;
 }
 
