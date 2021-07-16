@@ -629,6 +629,8 @@ footer {
         margin-top: 70px;
     }
 
+
+
 /*     .about {
         display: flex;
         flex-direction: row;
@@ -837,6 +839,27 @@ img {
     left: 0;
     filter: brightness(60%);
 }
+
+section.about {
+    padding: 50px 50px;
+    margin: -130px auto 40px auto;
+    background: white;
+    max-width: 1000px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    z-index: 10;
+}
+
+figure a:hover img:first-child {
+    filter: brightness(70%);
+    width: 350px;
+}
+
+figure a:hover img.play {
+    opacity: 0;
+}
+
 /*testimonials*/
 .animation-element.slide-left.testimonial,
 .animation-element.slide-left.testimonial:nth-of-type(odd),
