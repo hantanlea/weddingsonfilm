@@ -95,6 +95,12 @@
 </head>
 
 <body>
+  <div id="video-popout">
+    <div id="frame">
+      <button id="close-popout">X</button>
+      <video id="showreel" controls src="resources/video/2021 Weddings On Film Reel 24f750.m4v"></video>
+    </div>
+  </div>
   <nav id="nav">
     <ul>
       <li class="top"><a href="#">Top</a></li>
@@ -120,7 +126,7 @@
       <a class="logo" href="index.html">
         <h1>Weddings on Film</h1>
       </a>
-      <a class="play" href="#">play</a>
+      <a id="play-showreel" class="play" href="#">play</a>
       <a class="down" href="#about">down</a>
     </div>
   </header>
@@ -269,5 +275,24 @@
     <p>&#169 Weddings on Film</p>
   </footer>
 </body>
-
+<script>
+  function pressPlay() {
+    document.getElementById('video-popout').style.display = "flex";
+    document.getElementById('bgvid').pause();
+    var currentVid = document.getElementById('showreel');
+    currentVid.play();
+  }
+  function closePopout() {
+    document.getElementById('video-popout').style.display = "none";
+    document.getElementById('bgvid').play();
+    var currentVid = document.getElementById('showreel');
+    currentVid.pause();
+  }
+  
+  var playShowreel = document.getElementById('play-showreel');
+  playShowreel.addEventListener('click', pressPlay);
+  var closePopou = document.getElementById('close-popout');
+  closePopou.addEventListener('click', closePopout);
+</script>
 </html>
+
