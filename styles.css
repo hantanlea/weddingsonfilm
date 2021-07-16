@@ -826,6 +826,17 @@ nav {
 nav ul {
   margin: 0;
 }
+
+img {
+  margin-bottom: 25px;
+}
+
+.enquire h3 {
+  text-align: center;
+}
+.enquire p {
+  text-align: center;
+}
 /*testimonials*/
 .animation-element.slide-left.testimonial,
 .animation-element.slide-left.testimonial:nth-of-type(odd),
