@@ -815,9 +815,6 @@ footer {
     padding: 0;
   }
 
-header {
-  top: -30px;
-}
 
 nav {
   top: 0;
@@ -831,11 +828,14 @@ img {
   margin-bottom: 25px;
 }
 
-.enquire h3 {
-  text-align: center;
-}
-.enquire p {
-  text-align: center;
+.bgvideo video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: brightness(60%);
 }
 /*testimonials*/
 .animation-element.slide-left.testimonial,
