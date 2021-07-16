@@ -244,6 +244,7 @@ nav {
 nav ul {
     height: 100%;
     margin: 0 auto;
+    padding: 5px 0;
     display: flex;
     justify-content: center;
     align-items: center;
