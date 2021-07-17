@@ -54,6 +54,9 @@ h2 {
     text-align: center;
 }
 
+section {
+  position: relative;
+}
 
 /* BANNER */
 
@@ -71,6 +74,7 @@ h2 {
 
 
 #frame {
+  position: absolute;
   width: 60%;
 }
 
@@ -82,11 +86,12 @@ h2 {
   position: absolute;
   top: 0;
   right: 0;
-  opacity: 0.5;
+  background-color: rgba(255,255,255,0);
   font-family: Arial;
   font-size: 20px;
-  color: black;
-  padding: 5px;
+  font-weight: bold;
+  color: white;
+  padding: 4px;
   z-index: 12;
 }
 
@@ -205,14 +210,16 @@ a.play:hover {
 
 
 a.down {
+    display: block;
     position: absolute;
     width: 40px;
-    bottom: 75px;
     height: 45px;
     left: 50%;
+    bottom: 0px;
+    margin-bottom: -90px;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
-    background-image: url("images/down2.png");
+    background-image: url("images/downperu.png");
     background-size: 25px;
     background-repeat: no-repeat;
     text-indent: -9999999px;
@@ -226,6 +233,12 @@ a.down {
     animation-duration: 3s;
     animation-delay: 4s;
     animation-fill-mode: forwards; */
+}
+
+a.light-down {
+  background-image: url("images/down2.png");
+  bottom: 75px;
+  margin-bottom: 0;
 }
 
 @keyframes bounce {
@@ -328,8 +341,8 @@ main {
     position: relative;
 }
 section.about {
-    padding: 50px 50px;
-    margin: -130px auto 100px auto;
+    padding: 50px 50px 100px 50px;
+    margin: -130px auto 80px auto;
     background: white;
     max-width: 1000px;
     display: flex;
@@ -341,12 +354,12 @@ section.about {
 /* padding margin trick to fix nav links */
 
 .about h2 {
-    padding-bottom: 50px;
     padding-top: 60px;
     margin-top: -60px;
 }
 
 .about-text {
+    padding-top: 50px;
     max-width: 400px;
 }
 
@@ -360,18 +373,16 @@ section.about {
 /* MOVIES */
 
 .movies h2 {
-    padding-top: 100px;
-    margin-top: -140px;
-    margin-bottom: 40px;
+  margin: 100px 0;
 }
 
 section.movies {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    align-content: center;
+    align-content: flex-start;
     width: 100%;
-    margin-bottom: 80px;
+    height: 100vh;
 }
 
 figure {
@@ -448,7 +459,7 @@ section.enquire {
     background-color: rgb(250, 250, 250);
     margin: 20px auto 0 auto;
     position: relative;
-    box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2), 0 0px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.1), 0 0px 20px 0 rgba(0, 0, 0, 0.1);
 
 }
 

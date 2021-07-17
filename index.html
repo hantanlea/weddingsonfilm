@@ -95,19 +95,22 @@
 </head>
 
 <body>
+
   <div id="video-popout">
     <div id="frame">
       <button id="close-popout">X</button>
       <video id="showreel" controls src="resources/video/play-showreel.m4v"></video>
     </div>
   </div>
+  
   <nav id="nav">
     <ul>
       <li class="top"><a href="#">Top</a></li>
       <li><a href="#about">about</a></li>
       <li><a href="#movies">movies</a></li>
       <li class="smalllogo"><a href="#">Weddings on Film</a></li>
-      <li><a href="#">showreel</a></li>
+      <li><a data-showreel="play-showreel" id="menu-showreel" href="#">showreel</a></li>
+      <li><a href="#pricelist">price list</a></li>
       <li><a href="#enquire">enquire</a></li>
       <li class="mobilemenu">
         <a href="#nav">mobile menu</a>
@@ -126,8 +129,8 @@
       <a class="logo" href="index.html">
         <h1>Weddings on Film</h1>
       </a>
-      <a id="play-showreel" class="play" href="#">play</a>
-      <a class="down" href="#about">down</a>
+      <a data-showreel="play-showreel" id="play-showreel" class="play" href="#">play</a>
+      <a class="down light-down" href="#about">down</a>
     </div>
   </header>
 
@@ -138,52 +141,46 @@
       <img class="photo1" src="resources/ivan-berry-weddings-on-film-1.jpg" alt="">
       <div class="about-text">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate erat massa,
-          ac porta nibh luctus non. Morbi congue erat nibh, sed volutpat lectus dapibus ac.
-          Praesent eget sem sed augue pellentesque lacinia rutrum et tortor.
-          nisl.
-        </p>
+          Professional and affordable, Weddings On Film is a wedding production company based in the heart of Surrey, 
+          founded by professional videographer Ivan Berry, that specialises in bringing your special day to life.
+       </p>
         <p>
-          Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-          inceptos himenaeos. Proin sit amet mattis sapien, a maximus enim. Morbi aliquam
-          lacinia venenatis. Mauris a lorem blandit, suscipit sem at, feugiat nunc. Nulla eu
-          nulla ut tortor aliquam laoreet.
-        </p>
+          Weddings on film uses the very best equipment and technology to capture the love, laughter and tears of 
+          the most important day of you life for you to treasure forever.
+       </p>
         <p>
-          Curabitur feugiat ante sed leo molestie gravida. Aenean vitae sagittis odio, in maximus turpis.
-          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In quis
-          mollis massa.
-        </p>
-        <p>
-          Aenean aliquam orci vel leo eleifend porta. Suspendisse et facilisis arcu. Aenean efficitur eu
-          augue sit amet semper. Aenean placerat odio non velit mattis maximus.
+          Ivan has had over 15 years working in television and production for companies such as Channel 5, Virgin 
+          Media and Disney Channel.
         </p>
       </div>
+    <a class="down" href="#movies">down</a>
     </section>
+    
     <div id="movies"></div>
     <section class="movies">
       <h2>Recent Weddings</h2>
-      <figure id="nicola" class="animation-element slide-up">
+      <figure data-showreel="nicola" id="nicola" class="animation-element slide-up">
         <a href="#">
           <img src="resources/nicolatom-lg.png" alt="Nicola & Tom">
           <img class="play" src="images/play2.png" alt="">
         </a>
         <figcaption>Nicola & Tom</figcaption>
       </figure>
-      <figure id ="mike" class="animation-element slide-up delay1">
+      <figure data-showreel="mike" id ="mike" class="animation-element slide-up delay1">
         <a href="#">
           <img src="resources/mikefiona-lg.png" alt="Mike & Fiona">
           <img class="play" src="images/play2.png" alt="">
         </a>
         <figcaption>Mike & Fiona</figcaption>
       </figure>
-      <figure id="kim" class="animation-element slide-up delay2">
+      <figure data-showreel="kim" id="kim" class="animation-element slide-up delay2">
         <a href="#">
           <img src="resources/KimSteven-lg.png" alt="Kim & Steven">
           <img class="play" src="images/play2.png" alt="">
         </a>
         <figcaption>Kim & Steven</figcaption>
       </figure>
+      <a class="down" href="#enquire">down</a>
     </section>
 
     <article class="article1">
@@ -240,9 +237,10 @@
       </div>
     </article>
 
+    <div id="enquire"></div>
     <section class="enquire animation-element slide-up">
       <form action="contactform.php" method="POST">
-        <h2 id="enquire">Enquire</h2>
+        <h2>Enquire</h2>
         <h3>Celebrating the marriage of...</h3>
         <label for="name1">Celebrating the marriage of...</label>
         <input type="text" id='name1' name="name1" class="person">
@@ -277,7 +275,7 @@
 </body>
 <script>
   function pressPlay() {
-    var vid = "/resources/video/" + this.id + ".m4v";
+    var vid = "/resources/video/" + this.dataset.showreel + ".m4v";
     document.getElementById('showreel').src = vid;
     document.getElementById('video-popout').style.display = "flex";
     document.getElementById('bgvid').pause();
@@ -295,6 +293,9 @@
   playShowreel.addEventListener('click', pressPlay);
   var closePopou = document.getElementById('close-popout');
   closePopou.addEventListener('click', closePopout);
+
+  var menuShowreel = document.getElementById('menu-showreel');
+  menuShowreel.addEventListener('click', pressPlay);
 
   var kim = document.getElementById('kim');
   kim.addEventListener('click', pressPlay);
