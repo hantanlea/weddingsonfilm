@@ -802,8 +802,37 @@ footer {
     }
 
     nav {
+        position: fixed;
+        z-index: 13;
+        opacity: 0.8;
         top: 0;
         height: 50px;
+    }
+
+    nav a:hover {
+        color: peru;
+    }
+
+    nav a:target {
+        color: peru;
+    }
+    @keyframes slide-down {
+        0% {
+            opacity: 0;
+            -moz-transform: translate3d(0px, -70px, 0px);
+            -webkit-transform: translate3d(0px, -70px, 0px);
+            -o-transform: translate(1px, -70px);
+            -ms-transform: translate(1px, -70px);
+            transform: translate3d(0px, -70px, 0px); 
+        }
+        100% {
+            opacity: 0.8;
+            -moz-transform: translate3d(0px, 0, 0px);
+            -webkit-transform: translate3d(0px, 0px, 0px);
+            -o-transform: translate(1px, 0px);
+            -ms-transform: translate(1px, 0px);
+            transform: translate3d(0px, 0px, 0px); 
+        }
     }
     
     nav ul {
@@ -813,6 +842,22 @@ footer {
     nav ul li {
         display: none;
     }
+    
+    nav ul ul {
+      display: none;
+    }
+    nav ul {
+      padding: 0;
+    }
+
+    .top {
+      display: block;
+      top: 0;
+    }
+    nav a {
+      padding: 10px;
+      vertical-align: middle;
+    }
 
     nav ul li.top {
         display: block;
@@ -820,6 +865,7 @@ footer {
 
     nav ul li.top a {
         width: fit-content;
+        font-size: 2em;
     }
 
     nav ul li.smalllogo {
@@ -832,7 +878,7 @@ footer {
     }
 
     nav ul li.mobilemenu a {
-        background-image: url(images/hamburger.svg);
+        background-image: url(images/hamburgerperu.png);
         margin-right: 10px;
         width: 5px;
         height: 5px;
