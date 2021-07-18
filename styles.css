@@ -972,9 +972,6 @@ footer {
     }
 
 
-    .enquire p {
-      flex: 1 0 100%;
-    }
 
     figure a:hover img:first-child {
         filter: brightness(70%);
@@ -1010,6 +1007,13 @@ footer {
     }  */
     
 
+    .enquire .person {
+      flex: 1 0 70%;
+      margin: 10px 250px;
+    }
+    .enquire p {
+      flex: 1 0 100%;
+    }
     section.movies {
       height: fit-content;
     }
