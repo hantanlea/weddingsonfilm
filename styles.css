@@ -130,7 +130,7 @@ div.bgvideo {
     z-index: -1;
 } */
 
-a.logo {
+h1.logo {
     display: block;
     position: relative;
     top: 35vh;
@@ -154,7 +154,7 @@ a.logo {
 
 }
 
-a.logo h1 {
+h1.logo {
     font-weight: normal;
     color: white;
     font-family: 'Pretty Queen', cursive; 
@@ -372,7 +372,7 @@ section.about {
 /* MOVIES */
 
 .movies h2 {
-  margin: 100px 0;
+  margin: 50px 0;
 }
 
 section.movies {
@@ -380,8 +380,9 @@ section.movies {
     flex-flow: row wrap;
     justify-content: center;
     align-content: flex-start;
-    height: fit-content;
+    height: 100vh;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 figure {
@@ -445,8 +446,8 @@ article {
 section.enquire {
     height: fit-content;
     max-width: 1000px;
-    margin: 20px auto 0 auto;
-    padding: 50px;
+    margin: 0 auto 0 auto;
+    padding: 20px 50px 50px 50px;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -491,7 +492,7 @@ section.enquire {
 }
 
 .enquire input, textarea {
-    padding: 10px;
+    padding: 5px;
     margin: 10px 20px;
     opacity: 1;
     background: white;
@@ -506,9 +507,6 @@ section.enquire {
   height: 2em;
 }
 
-input.person {
-    padding: 10px;
-}
 
 .enquire textarea {
     flex: 0 1 100%;
@@ -789,7 +787,7 @@ footer {
       padding: 20px;
     }
 
-    a.logo {
+    h1.logo {
         top: 30vh;
     }
 
@@ -816,6 +814,7 @@ footer {
     nav a:target {
         color: peru;
     }
+
     @keyframes slide-down {
         0% {
             opacity: 0;
@@ -921,9 +920,6 @@ footer {
       transform: translate3d(0px, 0px, 0px); 
     }
 
-    section.movies h2 {
-      margin: 10px auto 40px;
-    }
 
     figure {
       margin: 10px auto;
@@ -937,6 +933,9 @@ footer {
     
     .movies h2 {
         display: block;
+    }
+    section.movies h2 {
+      margin: 10px auto 40px;
     }
 
     nav {
@@ -995,7 +994,7 @@ footer {
     }
   }
 
-@media only screen and (max-width: 1240px) {
+@media only screen and (max-width: 1170px) {
 
 /*     section.enquire form {
         flex-direction: column;
@@ -1010,6 +1009,15 @@ footer {
         flex: 0 0 100%;
     }  */
     
+
+    section.movies {
+      height: fit-content;
+    }
+
+    a.down {
+      display: none;
+    }
+
     .animation-element.slide-up.delay1 {
         transition-delay: 0;
     }
@@ -1017,5 +1025,4 @@ footer {
     .animation-element.slide-up.delay2 {
         transition-delay: 0;
     }
-
 }
