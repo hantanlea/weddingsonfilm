@@ -1,0 +1,31 @@
+Unused Fonts
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alluradllll&family=Amatic+SC:wght@400;700&family=Raleway&family=Architects+Daughter&family=Bad+Script&family=Cinzel:wght@400;600;900&family=Covered+By+Your+Grace&family=Gloria+Hallelujah&family=Gochi+Hand&family=Indie+Flower&family=Rock+Salt&family=Sacramento&family=Shadows+Into+Light&family=Special+Elite&display=swap"
+    rel="stylesheet">
+
+/* @font-face {
+    font-family: hachiko;
+    src: url('fonts/Hachiko.ttf');
+}
+
+@font-face {
+    font-family: 'High Handmade';
+    src: url('fonts/High Handmade.otf');
+}
+
+@font-face {
+    font-family: 'Breathing';
+    src: url('fonts/Breathing.ttf');
+}
+
+@font-face {
+    font-family: 'Austin';
+    src: url('fonts/Austin.ttf');
+}
+
+@font-face {
+    font-family: 'NomosInlineGrunge';
+    src: url('fonts/NomosInlineGrunge.ttf');
+}
+ */

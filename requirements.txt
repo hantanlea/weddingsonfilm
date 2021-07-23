@@ -1,0 +1,68 @@
+Version 3
+[ ] animate handwritten logo
+[ ] my website
+
+Version 2
+[ ] Make contact form work with PHP
+[ ] Do keyword research and adjust main text to include keywords
+[ ] research other requirements for website eg.
+[ ] metadata
+[ ] sitemap
+[ ] gdpr
+[ ] cookies statement?
+[ ] google analytics
+[ ] google indexing
+[ ] google maps listing
+[ ] directory listings?
+[ ] my credits and logo and link
+[ ] stop link tooltip popup
+[ ] hitched.co.uk
+
+Version 1
+[ ] favicon.ico
+[ ] change mike and fiona video
+[ ] crop video for mobile
+[ ] contact bar
+[ ] reduce delay on play button fade in
+[ ] fix font on main text
+[ ] fade in down button (use javascript to time to end of previous animations?)
+[ ] fix down arrow positioning - should be same location on every page - use fixed positioning and javascript to change link ref? 
+    or reduce margin and increase padding
+    or set height to 100vh
+[ ] re-organise code
+    [ ] remove commented out code
+    [ ] comment out obsolete code
+    [ ] check everything still works
+    [ ] combine spread out code
+    [ ] reorder css rules
+        Positioning
+        Box model
+        Typographic
+        Visual
+        Misc
+[ ] fix videos
+    [ ] video fallback image screenshot
+    [ ] Fix pop-out video close button
+    [ ] Sort out video quality on pop out videos
+    [ ] Try vimeo?
+    [ ] Fix positioning on pop out video so that it doesnt autoscroll back to top
+[ ] arrow disappears on video pop out
+[ ] Fix responsive contact form layout
+[ ] Make menu bar work
+[ ] Add price list
+[ ] add a return to top button
+[ ] click on background closes pop out video
+[ ] validation on email and phone number inputs
+[ ] fix mobile site
+    [ ] menu bar logo only appears after scroll
+    [ ] move ivan photo below first paragraph
+    [ ] increase bottom margin on movies
+    [ ] make date box look like a date box
+    [ ] make mobile menu bar work
+    [ ] fix mobile site spacing
+    [ ] make animations slide up sooner
+[ ] check on several different browsers and screen sizes and tablet
+[ ] accessibility
+[ ] social links
+[ ] set up email address
+[ ] set up domain forwarding

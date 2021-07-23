@@ -8,10 +8,10 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Playfair+Display+SC&display=swap"
     rel="stylesheet">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Alluradllll&family=Amatic+SC:wght@400;700&family=Raleway&family=Architects+Daughter&family=Bad+Script&family=Cinzel:wght@400;600;900&family=Covered+By+Your+Grace&family=Gloria+Hallelujah&family=Gochi+Hand&family=Indie+Flower&family=Rock+Salt&family=Sacramento&family=Shadows+Into+Light&family=Special+Elite&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/9f77640ccc.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
 
@@ -57,7 +57,10 @@
 
     });
 
-/*         /*Interactivity to determine when an animated element in in view. In view elements trigger our animation
+/*         
+
+/* Attempt to convert to vanilla javascript
+
             document.addEventListener("DOMContentLoaded", function() {
     
             let animation_elements = document.querySelectorAll('.animation-element');
@@ -96,10 +99,10 @@
 
 <body>
 
-  <div id="video-popout">
-    <div id="frame">
-      <button id="close-popout">X</button>
-      <video id="showreel" controls src="resources/video/play-showreel.m4v"></video>
+  <div id="modal">
+    <div id="modal-content">
+      <button id="close-modal-button">X</button>
+      <video controls id="modal-video" src="resources/video/showreel.m4v"></video>
     </div>
   </div>
   
@@ -109,134 +112,80 @@
       <li><a href="#about">about</a></li>
       <li><a href="#movies">movies</a></li>
       <li class="smalllogo"><a href="#">Weddings on Film</a></li>
-      <li><a data-showreel="play-showreel" id="menu-showreel" href="#">showreel</a></li>
+      <li><a data-videofile="showreel" id="menu-showreel" href="#">showreel</a></li>
       <li><a href="#pricelist">price list</a></li>
       <li><a href="#enquire">enquire</a></li>
       <li class="mobilemenu">
         <a href="#nav">mobile menu</a>
         <ul>
-
+          <!-- TO DO -->
         </ul>
       </li>
     </ul>
   </nav>
-  <header>
-    <div class="bgvideo">
-      <video playsinline autoplay muted loop poster="images/fallback.jpg" id="bgvid" src="resources/video/play-showreel.m4v">
-        <!--                 <source src="images/coverr1.mp4" type="video/mp4"> -->
+
+  <header class="bgvideo">
+      <video playsinline autoplay muted loop poster="images/fallback.jpg" id="bgvid" src="resources/video/showreel.m4v">
       </video>
-      <!--             <div class="banner">banner</div> -->
       <h1 class="logo">Weddings on Film</h1>
-      <a data-showreel="play-showreel" id="play-showreel" class="play" href="#">play</a>
+      <a data-videofile="showreel" id="showreel-play-button" class="play" href="#">play</a>
       <a class="down light-down" href="#about">down</a>
-    </div>
   </header>
 
   <main>
     <div id="about"></div>
     <section class="about animation-element slide-up">
       <h2>About Us</h2>
+      <div class="about-content">
       <img class="photo1" src="resources/ivan-berry-weddings-on-film-1.jpg" alt="">
-      <div class="about-text">
         <p>
-          Professional and affordable, Weddings On Film is a wedding production company based in the heart of Surrey, 
-          founded by professional videographer Ivan Berry, that specialises in bringing your special day to life.
+          Professional and affordable, Weddings On Film is a wedding videography company based in the heart of Surrey 
+          founded by professional film-maker Ivan Berry.
        </p>
         <p>
-          Weddings on film uses the very best equipment and technology to capture the love, laughter and tears of 
-          the most important day of you life for you to treasure forever.
+          We use the very best equipment and technology to create stylish, cinematic wedding films which 
+          truly capture the love, laughter and tears of the most important day of your life for you to treasure forever.
        </p>
         <p>
-          Ivan has had over 15 years working in television and production for companies such as Channel 5, Virgin 
+          Ivan has over 15 years working in television and production for companies such as Channel 5, Virgin 
           Media and Disney Channel.
         </p>
-      </div>
+    </div>
     <a class="down" href="#movies">down</a>
     </section>
     
     <div id="movies"></div>
     <section class="movies">
       <h2 class="animation-element slide-up">Recent Weddings</h2>
-      <figure data-showreel="nicola" id="nicola" class="animation-element slide-up">
+      <div class="movies">
+      <figure data-videofile="nicola" id="nicola" class="animation-element slide-up">
         <a href="#">
           <img src="resources/nicolatom-lg.png" alt="Nicola & Tom">
           <img class="play" src="images/play2.png" alt="">
         </a>
         <figcaption>Nicola & Tom</figcaption>
       </figure>
-      <figure data-showreel="mike" id ="mike" class="animation-element slide-up delay1">
+      <figure data-videofile="mike" id ="mike" class="animation-element slide-up delay1">
         <a href="#">
           <img src="resources/mikefiona-lg.png" alt="Mike & Fiona">
           <img class="play" src="images/play2.png" alt="">
         </a>
         <figcaption>Mike & Fiona</figcaption>
       </figure>
-      <figure data-showreel="kim" id="kim" class="animation-element slide-up delay2">
+      <figure data-videofile="kim" id="kim" class="animation-element slide-up delay2">
         <a href="#">
           <img src="resources/KimSteven-lg.png" alt="Kim & Steven">
           <img class="play" src="images/play2.png" alt="">
         </a>
         <figcaption>Kim & Steven</figcaption>
       </figure>
-      <a class="down" href="#enquire">down</a>
+      </div>
+      <a class="down" href="#price-list">down</a>
     </section>
 
-    <article class="article1">
-      <h2 id="">About Us</h2>
-      <img class="photo1" src="images/photographer3.jpg" alt="">
-      <div class="about-text">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate erat massa,
-          ac porta nibh luctus non. Morbi congue erat nibh, sed volutpat lectus dapibus ac.
-          Praesent eget sem sed augue pellentesque lacinia rutrum et tortor.
-          nisl.
-        </p>
-        <p>
-          Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-          inceptos himenaeos. Proin sit amet mattis sapien, a maximus enim. Morbi aliquam
-          lacinia venenatis. Mauris a lorem blandit, suscipit sem at, feugiat nunc. Nulla eu
-          nulla ut tortor aliquam laoreet.
-        </p>
-        <p>
-          Curabitur feugiat ante sed leo molestie gravida. Aenean vitae sagittis odio, in maximus turpis.
-          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In quis
-          mollis massa.
-        </p>
-        <p>
-          Aenean aliquam orci vel leo eleifend porta. Suspendisse et facilisis arcu. Aenean efficitur eu
-          augue sit amet semper. Aenean placerat odio non velit mattis maximus.
-        </p>
-      </div>
-    </article>
-    <article class="article2">
-      <h2 id="">About Us</h2>
-      <div class="about-text">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate erat massa,
-          ac porta nibh luctus non. Morbi congue erat nibh, sed volutpat lectus dapibus ac.
-          Praesent eget sem sed augue pellentesque lacinia rutrum et tortor.
-          nisl.
-        </p>
-        <p>
-          Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-          inceptos himenaeos. Proin sit amet mattis sapien, a maximus enim. Morbi aliquam
-          lacinia venenatis. Mauris a lorem blandit, suscipit sem at, feugiat nunc. Nulla eu
-          nulla ut tortor aliquam laoreet.
-        </p>
-        <p>
-          Curabitur feugiat ante sed leo molestie gravida. Aenean vitae sagittis odio, in maximus turpis.
-          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In quis
-          mollis massa.
-        </p>
-        <p>
-          Aenean aliquam orci vel leo eleifend porta. Suspendisse et facilisis arcu. Aenean efficitur eu
-          augue sit amet semper. Aenean placerat odio non velit mattis maximus.
-        </p>
-      </div>
-    </article>
 
     <div id="enquire"></div>
-    <section class="enquire animation-element slide-up">
+    <section class="enquire slide-up">
       <form action="contactform.php" method="POST">
         <h2>Enquire</h2>
         <h3>Celebrating the marriage of...</h3>
@@ -259,49 +208,78 @@
       </form>
     </section>
 
-    <section class="testimonials">
-      <p>
-        "Yeah it was well good like they done well. I'll definitely use them again next time."
-      </p>
+    <div id="price-list"></div>
+    <section class="price-list animation-element slide-up">
+      <div class="price-list-contents">
+      <h2>Price List</h2>
+      <div>
+        <h3>Highlight Reel</h3>
+        <p>length 3 - 5 mins</p>
+        <ul>
+          <li>Morning until first dance......£750</li>
+          <li>Morning until late in the night......£950</li>
+        </ul>
+        <h3>Extras</h3>
+        <ul>
+          <li>Complete recording of wedding ceremony with sound......£350</li>
+          <li>Complete recording of speeches with sound......£350</li>
+        </ul>
+
+      </div>
+      </div>
+      <a class="down" href="#contact">down</a>
     </section>
+
+
 
   </main>
 
   <footer>
-    <p>&#169 Weddings on Film</p>
+    <section id="contact" class="contact">
+      <h2>Get in Touch</h2>
+      <ul>
+        <li><a title="facebook" href="https://www.facebook.com/Weddingsonfilmuk/"><i class="fab fa-facebook"></i></a></li>
+        <li><a title="instagram" href="https://www.instagram.com/weddingsonfilmuk/"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+      <a href="tel:07920194793">07949 140792</a>
+      <a href="mailto:enquiries@weddingsonfilm.co.uk">enquiries@weddingsonfilm.co.uk</a>
+    <p class="copyright">&#169 Weddings on Film</p>
+    </section>
   </footer>
 </body>
+
 <script>
   function pressPlay() {
-    var vid = "resources/video/" + this.dataset.showreel + ".m4v";
-    document.getElementById('showreel').src = vid;
-    document.getElementById('video-popout').style.display = "flex";
+    let vid = "resources/video/" + this.dataset.videofile + ".m4v";
+    document.getElementById('modal-video').src = vid;
+    document.getElementById('modal').style.display = "flex";
     document.getElementById('bgvid').pause();
-    var currentVid = document.getElementById('showreel');
+    let currentVid = document.getElementById('modal-video');
     currentVid.play();
   }
-  function closePopout() {
-    document.getElementById('video-popout').style.display = "none";
+  function closeModal() {
+    document.getElementById('modal').style.display = "none";
     document.getElementById('bgvid').play();
-    var currentVid = document.getElementById('showreel');
+    let currentVid = document.getElementById('modal-video');
     currentVid.pause();
   }
   
-  var playShowreel = document.getElementById('play-showreel');
+  const playShowreel = document.getElementById('showreel-play-button');
   playShowreel.addEventListener('click', pressPlay);
-  var closePopou = document.getElementById('close-popout');
-  closePopou.addEventListener('click', closePopout);
 
-  var menuShowreel = document.getElementById('menu-showreel');
+  const closeModalButton = document.getElementById('close-modal-button');
+  closeModalButton.addEventListener('click', closeModal);
+
+  const menuShowreel = document.getElementById('menu-showreel');
   menuShowreel.addEventListener('click', pressPlay);
 
-  var kim = document.getElementById('kim');
+  const kim = document.getElementById('kim');
   kim.addEventListener('click', pressPlay);
 
-  var mike = document.getElementById('mike');
+  const mike = document.getElementById('mike');
   mike.addEventListener('click', pressPlay);
 
-  var nicola = document.getElementById('nicola');
+  const nicola = document.getElementById('nicola');
   nicola.addEventListener('click', pressPlay);
 </script>
 </html>
