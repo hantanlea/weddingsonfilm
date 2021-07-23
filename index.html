@@ -112,7 +112,7 @@
       <li><a href="#about">about</a></li>
       <li><a href="#movies">movies</a></li>
       <li class="smalllogo"><a href="#">Weddings on Film</a></li>
-      <li><a data-videofile="showreel" id="menu-showreel" href="#">showreel</a></li>
+      <li><a data-videofile="showreel.m4v" id="menu-showreel" href="#">showreel</a></li>
       <li><a href="#pricelist">price list</a></li>
       <li><a href="#enquire">enquire</a></li>
       <li class="mobilemenu">
@@ -128,7 +128,7 @@
       <video playsinline autoplay muted loop poster="images/fallback.jpg" id="bgvid" src="resources/video/showreel.m4v">
       </video>
       <h1 class="logo">Weddings on Film</h1>
-      <a data-videofile="showreel" id="showreel-play-button" class="play" href="#">play</a>
+      <a data-videofile="showreel.m4v" id="showreel-play-button" class="play" href="#">play</a>
       <a class="down light-down" href="#about">down</a>
   </header>
 
@@ -158,21 +158,21 @@
     <section class="movies">
       <h2 class="animation-element slide-up">Recent Weddings</h2>
       <div class="movies">
-      <figure data-videofile="nicola" id="nicola" class="animation-element slide-up">
+      <figure data-videofile="nicola.m4v" id="nicola" class="animation-element slide-up">
         <a href="#">
           <img src="resources/nicolatom-lg.png" alt="Nicola & Tom">
           <img class="play" src="images/play2.png" alt="">
         </a>
         <figcaption>Nicola & Tom</figcaption>
       </figure>
-      <figure data-videofile="mike" id ="mike" class="animation-element slide-up delay1">
+      <figure data-videofile="mikefiona.mp4" id ="mike" class="animation-element slide-up delay1">
         <a href="#">
           <img src="resources/mikefiona-lg.png" alt="Mike & Fiona">
           <img class="play" src="images/play2.png" alt="">
         </a>
         <figcaption>Mike & Fiona</figcaption>
       </figure>
-      <figure data-videofile="kim" id="kim" class="animation-element slide-up delay2">
+      <figure data-videofile="kim.m4v" id="kim" class="animation-element slide-up delay2">
         <a href="#">
           <img src="resources/KimSteven-lg.png" alt="Kim & Steven">
           <img class="play" src="images/play2.png" alt="">
@@ -250,7 +250,7 @@
 
 <script>
   function pressPlay() {
-    let vid = "resources/video/" + this.dataset.videofile + ".m4v";
+    let vid = "resources/video/" + this.dataset.videofile;
     document.getElementById('modal-video').src = vid;
     document.getElementById('modal').style.display = "flex";
     document.getElementById('bgvid').pause();
