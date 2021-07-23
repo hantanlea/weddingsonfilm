@@ -130,7 +130,7 @@ a:target {
 /* VIDEO MODAL */
 
 #modal {
-  display: none;
+  display: flex;
   position: fixed;
   overflow: auto;
   z-index: 10;
@@ -139,6 +139,7 @@ a:target {
   justify-content: center;
   align-items: center;
   background-color: rgba(0,0,0, 0.9);
+  visibility: hidden;
 }
 
 #modal-content {
@@ -266,7 +267,7 @@ a.down {
     background-repeat: no-repeat;
     background-position: center;
     opacity: 0.6;
-    z-index: 999;
+    z-index: 9;
     padding: 0.2em 0;
     animation-name: bounce2;
     animation-iteration-count: infinite;
@@ -380,7 +381,7 @@ nav ul a {
     line-height: 90%;
 } */
 
-nav ul li.mobilemenu, nav ul li.top {
+nav ul li.hamburger-li, nav ul li.top {
     display: none;
 }
 
@@ -394,7 +395,7 @@ li.smalllogo {
 
 section.about {
     margin: -130px auto 80px auto;
-    z-index: 8;
+    z-index: 7;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
@@ -915,6 +916,8 @@ section.contact {
         animation-name:none;
     }
 
+    /* MOBILE NAV BAR */
+
     nav {
         position: fixed;
         z-index: 13;
@@ -932,10 +935,6 @@ section.contact {
       line-height: 1.2;
       
     }
-
-/*     nav ul {
-      margin: 0;
-    } */
 
     nav a:hover {
         color: peru;
@@ -964,52 +963,78 @@ section.contact {
         }
     }
     
-    nav ul {
+    nav ul#main-menu-bar {
         justify-content: space-between;
+        align-items: center;
+        display: flex;
         width: 100%;
         padding: 0;
     }
 
-    nav ul li {
+    nav > ul > li {
         display: none;
     }
     
-    nav ul ul {
-      display: none;
+
+    nav ul li a {
+      height: 100%;
+      width: 3em;
+      padding: 0 0.4em;
     }
-
-    .top {
-      display: block;
-    }
-
-/*     nav a {
-      padding: 10px;
-      vertical-align: middle;
-    } */
-
     nav ul li.top {
         display: block;
+        width: 5px;
     }
 
     nav ul li.top a {
-        width: fit-content;
+      display: block;
         font-size: 2em;
+        width: fit-content;
+      margin-bottom: 0.2em;
     }
 
-    nav ul li.mobilemenu {
+    nav ul li.hamburger-li {
         display: block;
         width: fit-content;
     }
 
-    nav ul li.mobilemenu a {
+    nav ul li.hamburger-li > a {
         background-image: url(images/hamburgerperu.png);
-        width: 5px;
-        height: 5px;
         background-size: contain;
         background-position: center center;
         background-repeat: no-repeat;
         text-indent: -99999px;
     }
+
+    nav ul#mobile-menu {
+      position: fixed;
+      top: 50px;
+      right: 0;
+      display: none;
+      height: fit-content;
+      flex-flow: column nowrap;
+      width: fit-content;
+      z-index: 99999999999999;
+    }
+
+    nav ul#mobile-menu li {
+      display: block;
+      flex: 1 1 100%;
+      width: 100%;
+    }
+
+    nav ul#mobile-menu li a {
+      display: block;
+      width: 100%;
+      padding: 0.3em 1.5em;
+      text-align: center;
+      background: white;
+    } 
+
+    nav ul#mobile-menu li a:hover {
+      background: #eee;
+    }
+    
 
     .animation-element.slide-up {
         opacity: 0;

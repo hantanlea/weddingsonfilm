@@ -3,6 +3,7 @@ Version 3
 [ ] my website
 
 Version 2
+[ ] fix down arrow bounce animations - all different
 [ ] Make contact form work with PHP
 [ ] Do keyword research and adjust main text to include keywords
 [ ] research other requirements for website eg.
@@ -17,18 +18,22 @@ Version 2
 [ ] my credits and logo and link
 [ ] stop link tooltip popup
 [ ] hitched.co.uk
-
-Version 1
-[ ] favicon.ico
-[ ] change mike and fiona video
-[ ] crop video for mobile
-[ ] contact bar
-[ ] reduce delay on play button fade in
-[ ] fix font on main text
+[ ] improve favicon
+[ ] reduce file size mike and fiona
 [ ] fade in down button (use javascript to time to end of previous animations?)
 [ ] fix down arrow positioning - should be same location on every page - use fixed positioning and javascript to change link ref? 
     or reduce margin and increase padding
     or set height to 100vh
+[ ] Try vimeo?
+[ ] Sort out video quality on pop out videos
+[ ] Fix responsive contact form layout
+[ ] click on background closes modal
+[ ] add a return to top button
+[ ] validation on email and phone number inputs
+    [ ] make date box look like a date box
+    [ ] mobile menu bar logo
+    [ ] mobile menu bar logo only appears after scroll
+[ ] accessibility
 [ ] re-organise code
     [ ] remove commented out code
     [ ] comment out obsolete code
@@ -40,29 +45,27 @@ Version 1
         Typographic
         Visual
         Misc
-[ ] fix videos
-    [ ] video fallback image screenshot
-    [ ] Fix pop-out video close button
-    [ ] Sort out video quality on pop out videos
-    [ ] Try vimeo?
-    [ ] Fix positioning on pop out video so that it doesnt autoscroll back to top
-[ ] arrow disappears on video pop out
-[ ] Fix responsive contact form layout
-[ ] Make menu bar work
-[ ] Add price list
-[ ] add a return to top button
-[ ] click on background closes pop out video
-[ ] validation on email and phone number inputs
-[ ] fix mobile site
-    [ ] menu bar logo only appears after scroll
-    [ ] move ivan photo below first paragraph
-    [ ] increase bottom margin on movies
-    [ ] make date box look like a date box
-    [ ] make mobile menu bar work
-    [ ] fix mobile site spacing
-    [ ] make animations slide up sooner
+
+Version 1
+[X] favicon.ico
+[X] change mike and fiona video
+[X] crop video for mobile
+[X] contact bar
+[X] reduce delay on play button fade in
+[X] fix font on main text
+[X] video fallback image screenshot
+[X] Fix pop-out video close button
+[X] Fix positioning on pop out video so that it doesnt autoscroll back to top
+[X] arrow disappears on video pop out
+[X] Make menu bar work
+[X] Add price list
+[X] fix mobile site
+    [X] move ivan photo below first paragraph
+    [X] increase bottom margin on movies
+    [X] make mobile menu bar work
+    [X] fix mobile site spacing
+    [X] make animations slide up sooner
+[X] social links
+[X] set up email address
 [ ] check on several different browsers and screen sizes and tablet
-[ ] accessibility
-[ ] social links
-[ ] set up email address
 [ ] set up domain forwarding
