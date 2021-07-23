@@ -644,9 +644,12 @@ button:hover {
 
 /* PRICE LIST */
 
+div#price-list {
+  height: 3em;
+}
 section.price-list {
 
-  margin: 20px auto 30px auto;
+  margin: 40px auto 30px auto;
   padding: 40px;
   display: flex;
   flex-flow: column nowrap;
@@ -920,8 +923,8 @@ section.contact {
 
     nav {
         position: fixed;
+        opacity: 0;
         z-index: 13;
-        opacity: 0.8;
         /* top: 0; */
         height: 50px;
         color: peru;
@@ -954,7 +957,7 @@ section.contact {
             transform: translate3d(0px, -70px, 0px); 
         }
         100% {
-            opacity: 0.8;
+            opacity: 0.9;
             -moz-transform: translate3d(0px, 0, 0px);
             -webkit-transform: translate3d(0px, 0px, 0px);
             -o-transform: translate(1px, 0px);
@@ -1013,7 +1016,7 @@ section.contact {
       display: none;
       height: fit-content;
       flex-flow: column nowrap;
-      width: fit-content;
+      width: 50%;
       z-index: 99999999999999;
     }
 
