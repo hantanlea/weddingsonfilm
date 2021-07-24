@@ -103,7 +103,12 @@
   <div id="modal">
     <div id="modal-content">
       <button id="close-modal-button">X</button>
-      <video controls id="modal-video" src="resources/video/showreel.m4v"></video>
+      <!-- <video controls id="modal-video" src="resources/video/showreel.m4v"></video> -->
+      <div style="padding:56.25% 0 0 0;position:relative;">
+<!--         <iframe src="https://player.vimeo.com/video/575462828?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Weddings On Film - 2021">
+        </iframe> -->
+      </div>
+      <script src="https://player.vimeo.com/api/player.js"></script>
     </div>
   </div>
   
@@ -254,29 +259,52 @@
 </body>
 
 <script>
+  const iframe = document.createElement('iframe');
   function pressPlay() {
-    let videofile = this.dataset.videofile;
-    let vid = "resources/video/" + videofile;
-    document.getElementById('modal-video').src = vid;
     document.getElementById('bgvid').pause();
     document.getElementById('modal').style.visibility = "visible";
+    // const iframe = document.querySelector('.modal-content iframe');
+    iframe.setAttribute("frameborder","0");
+    iframe.allow="autoplay; fullscreen; picture-in-picture"; 
+    iframe.setAttribute("allowfullscreen","");
+    if (this.id == "kim") {
+      link = "https://player.vimeo.com/video/575353443?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479";
+      iframe.title = "kimsteven";
+    } else if (this.id == "mike") {
+      link = "https://player.vimeo.com/video/574149182?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479";
+      iframe.title = "mikefiona";
+    } else if (this.id == "nicola") {
+      link = "https://player.vimeo.com/video/574865893?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479";
+      iframe.title = "nicolathomas";
+    } else {
+      link = "https://player.vimeo.com/video/575462828?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479";
+      iframe.title="showreel";
+    }
+    iframe.src = link;
+    document.querySelector('#modal-content div').appendChild(iframe);
+  }
+/*     let videofile = this.dataset.videofile;
+    let vid = "resources/video/" + videofile;
+    document.getElementById('modal-video').src = vid;
     let currentVid = document.getElementById('modal-video');
-    currentVid.play();
+    currentVid.play(); */
+  
 
     const closeModalButton = document.getElementById('close-modal-button');
     closeModalButton.addEventListener('click', closeModal);
 
     function closeModal() {
+      document.querySelector('#modal-content div').removeChild(iframe);
       document.getElementById('modal').style.visibility = "hidden";
       document.getElementById('bgvid').play();
 
-      let currentVid = document.getElementById('modal-video');
-      currentVid.pause();
-      if (videofile != 'showreel.m4v') {
+/*       let currentVid = document.getElementById('modal-video');
+      currentVid.pause(); */
+      if (iframe.title != 'showreel') {
         document.getElementById('movies').scrollIntoView();
       }
     }
-  }
+  
   
   const playShowreel = document.getElementById('showreel-play-button');
   playShowreel.addEventListener('click', pressPlay);
