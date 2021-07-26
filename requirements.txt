@@ -45,6 +45,8 @@ Version 2
         Typographic
         Visual
         Misc
+    [ ] change favicon
+    [ ] add touch icon?
 
 Version 1
 [X] favicon.ico
@@ -66,6 +68,7 @@ Version 1
     [X] fix mobile site spacing
     [X] make animations slide up sooner
 [X] social links
-[X] set up email address
+[ ] set up email address and forwarding
+[ ] hack vimeo videos to not show title
 [ ] check on several different browsers and screen sizes and tablet
 [ ] set up domain forwarding
