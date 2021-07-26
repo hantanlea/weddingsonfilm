@@ -101,8 +101,8 @@
 <body>
 
   <div id="modal">
+    <a href="#" id="close-modal-button" class="no-select">X</a>
     <div id="modal-content">
-      <button id="close-modal-button">X</button>
       <!-- <video controls id="modal-video" src="resources/video/showreel.m4v"></video> -->
       <div style="padding:56.25% 0 0 0;position:relative;">
 <!--         <iframe src="https://player.vimeo.com/video/575462828?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Weddings On Film - 2021">
@@ -138,7 +138,7 @@
       <video playsinline autoplay muted loop poster="images/fallback.jpg" id="bgvid" src="resources/video/showreel.m4v">
       </video>
       <h1 class="logo">Weddings on Film</h1>
-      <a data-videofile="showreel.m4v" id="showreel-play-button" class="play" href="#">play</a>
+      <a data-videofile="showreel.m4v" id="showreel-play-button" class="play no-select" href="#">play</a>
       <a class="down light-down" href="#about">down</a>
   </header>
 
@@ -268,20 +268,24 @@
     iframe.allow="autoplay; fullscreen; picture-in-picture"; 
     iframe.setAttribute("allowfullscreen","");
     if (this.id == "kim") {
-      link = "https://player.vimeo.com/video/575353443?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479";
+      link = "https://player.vimeo.com/video/575353443?portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479";
       iframe.title = "kimsteven";
     } else if (this.id == "mike") {
-      link = "https://player.vimeo.com/video/574149182?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479";
+      link = "https://player.vimeo.com/video/574149182?portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479";
       iframe.title = "mikefiona";
     } else if (this.id == "nicola") {
-      link = "https://player.vimeo.com/video/574865893?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479";
+      link = "https://player.vimeo.com/video/574865893?portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479";
       iframe.title = "nicolathomas";
     } else {
-      link = "https://player.vimeo.com/video/575462828?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479";
+      link = "https://player.vimeo.com/video/575462828?portrait=0&amp;title=0&amp;byline=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479";
       iframe.title="showreel";
     }
     iframe.src = link;
     document.querySelector('#modal-content div').appendChild(iframe);
+    const body = document.querySelector('body');
+    body.style.height = "80%";
+    body.style.overflow = "hidden";
+    // document.addEventListener('scroll', closeModal);
   }
 /*     let videofile = this.dataset.videofile;
     let vid = "resources/video/" + videofile;
@@ -297,13 +301,17 @@
       document.querySelector('#modal-content div').removeChild(iframe);
       document.getElementById('modal').style.visibility = "hidden";
       document.getElementById('bgvid').play();
-
-/*       let currentVid = document.getElementById('modal-video');
-      currentVid.pause(); */
       if (iframe.title != 'showreel') {
         document.getElementById('movies').scrollIntoView();
       }
+      // document.removeEventListener('scroll', closeModal);
+      const body = document.querySelector('body');
+      body.style.height = "100%";
+      body.style.overflow = "auto";
     }
+
+    const modal = document.querySelector('#modal');
+    modal.addEventListener('click', closeModal);
   
   
   const playShowreel = document.getElementById('showreel-play-button');
@@ -341,6 +349,8 @@
     const mobileMenu = document.getElementById('mobile-menu');
     mobileMenu.style.display = 'none';
   }
+
+  
 
   document.querySelectorAll('.mobile-menu-item').forEach(item => item.addEventListener('click', closeMobileMenu));
 </script>
