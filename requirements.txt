@@ -6,28 +6,27 @@ Version 2
 [ ] fix down arrow bounce animations - all different
 [ ] Make contact form work with PHP
 [ ] Do keyword research and adjust main text to include keywords
+[ ] index on google and bing
+[ ] google maps listing
+[ ] build backlinks
 [ ] research other requirements for website eg.
-[ ] metadata
-[ ] sitemap
+[X] metadata
+[X] sitemap
 [ ] gdpr
 [ ] cookies statement?
 [ ] google analytics
-[ ] google indexing
-[ ] google maps listing
 [ ] directory listings?
 [ ] my credits and logo and link
 [ ] stop link tooltip popup
 [ ] hitched.co.uk
 [ ] improve favicon
-[ ] reduce file size mike and fiona
 [ ] fade in down button (use javascript to time to end of previous animations?)
 [ ] fix down arrow positioning - should be same location on every page - use fixed positioning and javascript to change link ref? 
     or reduce margin and increase padding
     or set height to 100vh
-[ ] Try vimeo?
-[ ] Sort out video quality on pop out videos
+[X] Try vimeo?
 [ ] Fix responsive contact form layout
-[ ] click on background closes modal
+[X] click on background closes modal
 [ ] add a return to top button
 [ ] validation on email and phone number inputs
     [ ] make date box look like a date box
@@ -45,8 +44,8 @@ Version 2
         Typographic
         Visual
         Misc
-    [ ] change favicon
-    [ ] add touch icon?
+[ ] change favicon
+
 
 Version 1
 [X] favicon.ico
@@ -68,7 +67,6 @@ Version 1
     [X] fix mobile site spacing
     [X] make animations slide up sooner
 [X] social links
-[ ] set up email address and forwarding
-[ ] hack vimeo videos to not show title
+[X] set up email address and forwarding
+[X] hack vimeo videos to not show title
 [ ] check on several different browsers and screen sizes and tablet
-[ ] set up domain forwarding

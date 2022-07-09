@@ -17,9 +17,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
 
-
-
-
     /*Interactivity to determine when an animated element in in view. In view elements trigger our animation*/
     $(document).ready(function () {
 
@@ -99,15 +96,13 @@
             check_if_in_view();
     
             }); */
-
-    
   </script>
 </head>
 
 <body>
 
   <div id="modal">
-    <a href="#close" id="close-modal-button" class="no-select">X</a>
+    <a href="#" id="close-modal-button" class="no-select">X</a>
     <div id="modal-content">
       <!-- <video controls id="modal-video" src="resources/video/showreel.m4v"></video> -->
       <div style="padding:56.25% 0 0 0;position:relative;">
@@ -174,65 +169,57 @@
     <section class="movies">
       <h2 class="animation-element slide-up">Recent Weddings</h2>
       <div class="movies">
-<!--       
-      <figure id="livBrendan" class="animation-element slide-up">
-        <a href="#open">
-          <img src="resources/LivBrendan-lg.png" alt="Liv & Brendan">
-          <img class="play" src="images/play2.png" alt="">
-        </a>
-        <figcaption>Liv & Brendan</figcaption>
-      </figure>
       
-      <figure id="lottieDan" class="animation-element slide-up delay1">
-        <a href="#open">
-          <img src="resources/LottieDan-lg.png" alt="Lottie & Dan">
+      <figure data-videofile="lottiedan.m4v" id="lottiedan" class="animation-element slide-up">
+        <a href="#">
+          <img src="resources/lottiedan-lg.png" alt="Lottie & Dan">
           <img class="play" src="images/play2.png" alt="">
         </a>
         <figcaption>Lottie & Dan</figcaption>
       </figure>
 
-      <figure id="nicolaThomas" class="animation-element slide-up delay2">
-        <a href="#open">
-          <img src="resources/NicolaThomas-lg.png" alt="Nicola & Tom">
+      <figure data-videofile="nicola.m4v" id="nicola" class="animation-element slide-up delay1">
+        <a href="#">
+          <img src="resources/nicolatom-lg.png" alt="Nicola & Tom">
           <img class="play" src="images/play2.png" alt="">
         </a>
         <figcaption>Nicola & Tom</figcaption>
       </figure>
 
-      <figure id="laurenMatt" class="animation-element slide-up">
-        <a href="#open">
-          <img src="resources/LaurenMatt-lg.png" alt="Lauren & Matt">
+      <figure data-videofile="laurenmatt.m4v" id="laurenmatt" class="animation-element slide-up delay2">
+        <a href="#">
+          <img src="resources/laurenmatt-lg.png" alt="Lauren & Matt">
           <img class="play" src="images/play2.png" alt="">
         </a>
         <figcaption>Lauren & Matt</figcaption>
       </figure>
 
-      <figure id="lottieDanSpeeches" class="animation-element slide-up delay1">
-        <a href="#open">
-          <img src="resources/LottieDanSpeeches-lg.png" alt="Lottie & Dan Speeches">
+      <figure data-videofile="lottiedanspeeches.m4v" id="lottiedanspeeches" class="animation-element slide-up">
+        <a href="#">
+          <img src="resources/lottiedanspeeches-lg.png" alt="Lottie & Dan Speeches">
           <img class="play" src="images/play2.png" alt="">
         </a>
         <figcaption>Lottie & Dan Speeches</figcaption>
       </figure>
 
-      <figure id ="mikeFiona" class="animation-element slide-up delay2">
-        <a href="#open">
-          <img src="resources/MikeFiona-lg.png" alt="Mike & Fiona">
+      <figure data-videofile="mikefiona.mp4" id ="mike" class="animation-element slide-up delay1">
+        <a href="#">
+          <img src="resources/mikefiona-lg.png" alt="Mike & Fiona">
           <img class="play" src="images/play2.png" alt="">
         </a>
         <figcaption>Mike & Fiona</figcaption>
       </figure>
 
-      <figure id="kimSteven" class="animation-element slide-up delay2">
-        <a href="#open">
+      <figure data-videofile="kim.m4v" id="kim" class="animation-element slide-up delay2">
+        <a href="#">
           <img src="resources/KimSteven-lg.png" alt="Kim & Steven">
           <img class="play" src="images/play2.png" alt="">
         </a>
         <figcaption>Kim & Steven</figcaption>
-      </figure> -->
+      </figure>
       </div>
+      <!-- <a class="down" href="#price-list">down</a> -->
     </section>
-      
 
 
     <div id="enquire"></div>
@@ -291,7 +278,7 @@
         <li><a title="facebook" href="https://www.facebook.com/Weddingsonfilmuk/"><i class="fab fa-facebook"></i></a></li>
         <li><a title="instagram" href="https://www.instagram.com/weddingsonfilmuk/"><i class="fab fa-instagram"></i></a></li>
       </ul>
-      <a href="tel:07949140792">07949 140792</a>
+      <a href="tel:07920194793">07949 140792</a>
       <a href="mailto:enquiries@weddingsonfilm.co.uk">enquiries@weddingsonfilm.co.uk</a>
     <p class="copyright">&#169 Weddings on Film</p>
     </section>
@@ -299,143 +286,70 @@
 </body>
 
 <script>
-
-  const movies = {
-    kimSteven: {
-      names: "Kim & Steven",
-      link: "https://player.vimeo.com/video/575353443?\
-      portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;\
-      autopause=0&amp;player_id=0&amp;app_id=58479",
-      image: "/resources/KimSteven-lg.png",
-    },
-    mikeFiona: {
-      names: "Mike & Fiona",
-      link: "https://player.vimeo.com/video/574149182?\
-      portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;\
-      autopause=0&amp;player_id=0&amp;app_id=58479",
-      image: "/resources/MikeFiona-lg.png",
-    },
-    nicolaThomas: {
-      names: "Nicola & Tom",
-      link: "https://player.vimeo.com/video/574865893?\
-      portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;\
-      autopause=0&amp;player_id=0&amp;app_id=58479",
-      image: "resources/NicolaThomas-lg.png",
-    },
-    lottieDan: {
-      names: "Lottie & Dan",
-      link: "https://player.vimeo.com/video/604816209?\
-      portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;\
-      autopause=0&amp;player_id=0&amp;app_id=58479",
-      image: "/resources/LottieDan-lg.png",
-    },
-    lottieDanSpeeches: {
-      names: "Lottie & Dan Speeches",
-      link: "https://player.vimeo.com/video/604816010?\
-      portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;\
-      autopause=0&amp;player_id=0&amp;app_id=58479",
-      image: "/resources/LottieDanSpeeches-lg.png",
-    },
-    laurenMatt: {
-      names: "Lauren & Matt",
-      link: "https://player.vimeo.com/video/667712982?\
-      portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;\
-      autopause=0&amp;player_id=0&amp;app_id=58479",
-      image: "/resources/LaurenMatt-lg.png",
-    },
-    livBrendan: {
-      names: "Liv & Brendan",
-      link: "https://player.vimeo.com/video/720591124?h=6ccea6bb79&amp;\
-      portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;\
-      autopause=0&amp;player_id=0&amp;app_id=58479",
-      image: "resources/LivBrendan-lg.png",
-    },
-  };
-
-
-  function createModal() {
-
-    const iframe = document.createElement('iframe');
-    document.querySelector('body').appendChild(iframe);
-    function closeModal() {
-      document.querySelector('#modal-content div').removeChild(iframe);
-      document.getElementById('modal').style.visibility = "hidden";
-      document.getElementById('bgvid').play();
-    }
-
-    const closeModalButton = document.getElementById('close-modal-button');
-    closeModalButton.addEventListener('click', closeModal);
-
-    const modal = document.querySelector('#modal');
-    modal.addEventListener('click', closeModal);
-  }
-  createModal();
-
+  const iframe = document.createElement('iframe');
   function pressPlay() {
-    let iframe = document.querySelector('iframe');
     document.getElementById('bgvid').pause();
     document.getElementById('modal').style.visibility = "visible";
-    // document.querySelector('body').classList.add('modal-open');
     // const iframe = document.querySelector('.modal-content iframe');
     iframe.setAttribute("frameborder","0");
     iframe.allow="autoplay; fullscreen; picture-in-picture"; 
     iframe.setAttribute("allowfullscreen","");
-    link = movies[this.id].link; 
-    iframe.title = this.id; 
+    if (this.id == "kim") {
+      link = "https://player.vimeo.com/video/575353443?portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479";
+      iframe.title = "kimsteven";
+    } else if (this.id == "mike") {
+      link = "https://player.vimeo.com/video/574149182?portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479";
+      iframe.title = "mikefiona";
+    } else if (this.id == "nicola") {
+      link = "https://player.vimeo.com/video/574865893?portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479";
+      iframe.title = "nicolathomas";
+    } else if (this.id == "lottiedan") {
+      link = "https://player.vimeo.com/video/604816209?portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479";
+      iframe.title = "lottiedan";
+    } else if (this.id == "lottiedanspeeches") {
+      link = "https://player.vimeo.com/video/604816010?portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479";
+      iframe.title = "lottiedanspeeches";
+    } else if (this.id == "laurenmatt") {
+      link = "https://player.vimeo.com/video/667712982?portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479";
+      iframe.title = "laurenmatt";
+    } else {
+      link = "https://player.vimeo.com/video/575462828?portrait=0&amp;title=0&amp;byline=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479";
+      iframe.title="showreel";
+    }
     iframe.src = link;
     document.querySelector('#modal-content div').appendChild(iframe);
     const body = document.querySelector('body');
-    // body.style.height = "100vh";
-    // body.style.overflow = "hidden";
+    body.style.height = "80%";
+    body.style.overflow = "hidden";
     // document.addEventListener('scroll', closeModal);
   }
+/*     let videofile = this.dataset.videofile;
+    let vid = "resources/video/" + videofile;
+    document.getElementById('modal-video').src = vid;
+    let currentVid = document.getElementById('modal-video');
+    currentVid.play(); */
   
 
+    const closeModalButton = document.getElementById('close-modal-button');
+    closeModalButton.addEventListener('click', closeModal);
 
-  function createThumbnail(id, names, link, image) {
-
-    let movieStill = document.createElement('img');
-    movieStill.src = image;
-    movieStill.alt = names;
-
-    let playButton = document.createElement('img');
-    playButton.classList.add("play");
-    playButton.src = "/images/play2.png";
-    playButton.alt="";
-
-    let anchor = document.createElement('a');
-    anchor.href = "#open";
-    anchor.appendChild(movieStill);
-    anchor.appendChild(playButton);
-
-    let figCaption = document.createElement('figcaption');
-    figCaption.textContent = names;
-
-    let figure = document.createElement('figure');
-    figure.id = id;
-    figure.classList.add("animation-element", "slide-up");
-    figure.appendChild(anchor);
-    figure.appendChild(figCaption);
-
-    return figure;
-  }
-
-    
-  function createMoviesDiv() {
-    const moviesDiv = document.querySelector('div.movies');
-    let i = 0;
-    for (let item in movies) {
-      let currentMovie = createThumbnail(item, movies[item].names, movies[item].link, movies[item].image);
-      let delay = i % 3;
-      currentMovie.classList.add(`delay${delay}`);
-      moviesDiv.appendChild(currentMovie);
-      currentMovie.addEventListener('click', pressPlay);
-      i++;
+    function closeModal() {
+      document.querySelector('#modal-content div').removeChild(iframe);
+      document.getElementById('modal').style.visibility = "hidden";
+      document.getElementById('bgvid').play();
+      if (iframe.title != 'showreel') {
+        document.getElementById('movies').scrollIntoView();
+      }
+      // document.removeEventListener('scroll', closeModal);
+      const body = document.querySelector('body');
+      body.style.height = "100%";
+      body.style.overflow = "auto";
     }
-  }
 
-  createMoviesDiv();
-    
+    const modal = document.querySelector('#modal');
+    modal.addEventListener('click', closeModal);
+  
+  
   const playShowreel = document.getElementById('showreel-play-button');
   playShowreel.addEventListener('click', pressPlay);
 
@@ -445,27 +359,25 @@
   const mobileMenuShowreel = document.getElementById('mobile-menu-showreel');
   mobileMenuShowreel.addEventListener('click', pressPlay);
   
-/*   const livBrendan = document.getElementById('livBrendan');
-  livBrendan.addEventListener('click', pressPlay);
 
-  const kimSteven = document.getElementById('kimSteven');
-  kimSteven.addEventListener('click', pressPlay);
+  const kim = document.getElementById('kim');
+  kim.addEventListener('click', pressPlay);
 
-  const mikeFiona = document.getElementById('mikeFiona');
-  mikeFiona.addEventListener('click', pressPlay);
+  const mike = document.getElementById('mike');
+  mike.addEventListener('click', pressPlay);
 
-  const nicolaThomas = document.getElementById('nicolaThomas');
-  nicolaThomas.addEventListener('click', pressPlay);
+  const nicola = document.getElementById('nicola');
+  nicola.addEventListener('click', pressPlay);
 
-  const lottieDan = document.getElementById('lottieDan');
-  lottieDan.addEventListener('click', pressPlay);
+  const lottiedan = document.getElementById('lottiedan');
+  lottiedan.addEventListener('click', pressPlay);
 
-  const lottieDanSpeeches = document.getElementById('lottieDanSpeeches');
-  lottieDanSpeeches.addEventListener('click', pressPlay);
+  const lottiedanspeeches = document.getElementById('lottiedanspeeches');
+  lottiedanspeeches.addEventListener('click', pressPlay);
 
-  const laurenMatt = document.getElementById('laurenMatt');
-  laurenMatt.addEventListener('click', pressPlay);
- */
+  const laurenmatt = document.getElementById('laurenmatt');
+  laurenmatt.addEventListener('click', pressPlay);
+
   function openMobileMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
     if (mobileMenu.style.display == 'flex') {
@@ -482,6 +394,8 @@
     const mobileMenu = document.getElementById('mobile-menu');
     mobileMenu.style.display = 'none';
   }
+
+  
 
   document.querySelectorAll('.mobile-menu-item').forEach(item => item.addEventListener('click', closeMobileMenu));
 </script>

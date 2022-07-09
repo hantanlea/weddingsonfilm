@@ -17,9 +17,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
 
-
-
-
     /*Interactivity to determine when an animated element in in view. In view elements trigger our animation*/
     $(document).ready(function () {
 
@@ -99,8 +96,6 @@
             check_if_in_view();
     
             }); */
-
-    
   </script>
 </head>
 
@@ -174,7 +169,7 @@
     <section class="movies">
       <h2 class="animation-element slide-up">Recent Weddings</h2>
       <div class="movies">
-<!--       
+      
       <figure id="livBrendan" class="animation-element slide-up">
         <a href="#open">
           <img src="resources/LivBrendan-lg.png" alt="Liv & Brendan">
@@ -229,7 +224,7 @@
           <img class="play" src="images/play2.png" alt="">
         </a>
         <figcaption>Kim & Steven</figcaption>
-      </figure> -->
+      </figure>
       </div>
     </section>
       
@@ -299,52 +294,52 @@
 </body>
 
 <script>
-
-  const movies = {
+  const iframe = document.createElement('iframe');
+  
+  let movies = {
+    showReel: {
+      link: "https://player.vimeo.com/video/575462828?\
+      portrait=0&amp;title=0&amp;byline=0&amp;badge=0&amp;\
+      autopause=0&amp;player_id=0&amp;app_id=58479",
+      image: "",
+    },
     kimSteven: {
-      names: "Kim & Steven",
       link: "https://player.vimeo.com/video/575353443?\
       portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;\
       autopause=0&amp;player_id=0&amp;app_id=58479",
       image: "/resources/KimSteven-lg.png",
     },
     mikeFiona: {
-      names: "Mike & Fiona",
       link: "https://player.vimeo.com/video/574149182?\
       portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;\
       autopause=0&amp;player_id=0&amp;app_id=58479",
       image: "/resources/MikeFiona-lg.png",
     },
     nicolaThomas: {
-      names: "Nicola & Tom",
       link: "https://player.vimeo.com/video/574865893?\
       portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;\
       autopause=0&amp;player_id=0&amp;app_id=58479",
       image: "resources/NicolaThomas-lg.png",
     },
     lottieDan: {
-      names: "Lottie & Dan",
       link: "https://player.vimeo.com/video/604816209?\
       portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;\
       autopause=0&amp;player_id=0&amp;app_id=58479",
       image: "/resources/LottieDan-lg.png",
     },
     lottieDanSpeeches: {
-      names: "Lottie & Dan Speeches",
       link: "https://player.vimeo.com/video/604816010?\
       portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;\
       autopause=0&amp;player_id=0&amp;app_id=58479",
       image: "/resources/LottieDanSpeeches-lg.png",
     },
     laurenMatt: {
-      names: "Lauren & Matt",
       link: "https://player.vimeo.com/video/667712982?\
       portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;\
       autopause=0&amp;player_id=0&amp;app_id=58479",
       image: "/resources/LaurenMatt-lg.png",
     },
     livBrendan: {
-      names: "Liv & Brendan",
       link: "https://player.vimeo.com/video/720591124?h=6ccea6bb79&amp;\
       portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;\
       autopause=0&amp;player_id=0&amp;app_id=58479",
@@ -352,30 +347,10 @@
     },
   };
 
-
-  function createModal() {
-
-    const iframe = document.createElement('iframe');
-    document.querySelector('body').appendChild(iframe);
-    function closeModal() {
-      document.querySelector('#modal-content div').removeChild(iframe);
-      document.getElementById('modal').style.visibility = "hidden";
-      document.getElementById('bgvid').play();
-    }
-
-    const closeModalButton = document.getElementById('close-modal-button');
-    closeModalButton.addEventListener('click', closeModal);
-
-    const modal = document.querySelector('#modal');
-    modal.addEventListener('click', closeModal);
-  }
-  createModal();
-
   function pressPlay() {
-    let iframe = document.querySelector('iframe');
     document.getElementById('bgvid').pause();
     document.getElementById('modal').style.visibility = "visible";
-    // document.querySelector('body').classList.add('modal-open');
+    document.querySelector('body').classList.add('modal-open');
     // const iframe = document.querySelector('.modal-content iframe');
     iframe.setAttribute("frameborder","0");
     iframe.allow="autoplay; fullscreen; picture-in-picture"; 
@@ -389,53 +364,34 @@
     // body.style.overflow = "hidden";
     // document.addEventListener('scroll', closeModal);
   }
+/*     let videofile = this.dataset.videofile;
+    let vid = "resources/video/" + videofile;
+    document.getElementById('modal-video').src = vid;
+    let currentVid = document.getElementById('modal-video');
+    currentVid.play(); */
   
 
+    const closeModalButton = document.getElementById('close-modal-button');
+    closeModalButton.addEventListener('click', closeModal);
 
-  function createThumbnail(id, names, link, image) {
-
-    let movieStill = document.createElement('img');
-    movieStill.src = image;
-    movieStill.alt = names;
-
-    let playButton = document.createElement('img');
-    playButton.classList.add("play");
-    playButton.src = "/images/play2.png";
-    playButton.alt="";
-
-    let anchor = document.createElement('a');
-    anchor.href = "#open";
-    anchor.appendChild(movieStill);
-    anchor.appendChild(playButton);
-
-    let figCaption = document.createElement('figcaption');
-    figCaption.textContent = names;
-
-    let figure = document.createElement('figure');
-    figure.id = id;
-    figure.classList.add("animation-element", "slide-up");
-    figure.appendChild(anchor);
-    figure.appendChild(figCaption);
-
-    return figure;
-  }
-
-    
-  function createMoviesDiv() {
-    const moviesDiv = document.querySelector('div.movies');
-    let i = 0;
-    for (let item in movies) {
-      let currentMovie = createThumbnail(item, movies[item].names, movies[item].link, movies[item].image);
-      let delay = i % 3;
-      currentMovie.classList.add(`delay${delay}`);
-      moviesDiv.appendChild(currentMovie);
-      currentMovie.addEventListener('click', pressPlay);
-      i++;
+    function closeModal() {
+      document.querySelector('#modal-content div').removeChild(iframe);
+      // document.querySelector('body').classList.remove('modal-open');
+      document.getElementById('modal').style.visibility = "hidden";
+      document.getElementById('bgvid').play();
+/*       if (iframe.title != 'showreel') {
+        document.getElementById('movies').scrollIntoView();
+      } */
+      // document.removeEventListener('scroll', closeModal);
+/*       const body = document.querySelector('body');
+      body.style.height = "100%";
+      body.style.overflow = "auto"; */
     }
-  }
 
-  createMoviesDiv();
-    
+    const modal = document.querySelector('#modal');
+    modal.addEventListener('click', closeModal);
+  
+  
   const playShowreel = document.getElementById('showreel-play-button');
   playShowreel.addEventListener('click', pressPlay);
 
@@ -445,7 +401,7 @@
   const mobileMenuShowreel = document.getElementById('mobile-menu-showreel');
   mobileMenuShowreel.addEventListener('click', pressPlay);
   
-/*   const livBrendan = document.getElementById('livBrendan');
+  const livBrendan = document.getElementById('livBrendan');
   livBrendan.addEventListener('click', pressPlay);
 
   const kimSteven = document.getElementById('kimSteven');
@@ -465,7 +421,7 @@
 
   const laurenMatt = document.getElementById('laurenMatt');
   laurenMatt.addEventListener('click', pressPlay);
- */
+
   function openMobileMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
     if (mobileMenu.style.display == 'flex') {

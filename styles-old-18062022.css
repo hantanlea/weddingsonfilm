@@ -129,19 +129,14 @@ a:target {
 
 /* VIDEO MODAL */
 
-/* body.modal-open {
-  position: fixed;
-  height: 100vh;
-  overflow-y: hidden;
-} */
 
 #modal {
   display: flex;
   position: fixed;
   overflow: hidden;
   z-index: 15;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   justify-content: center;
   align-items: center;
   background-color: rgba(0,0,0, 0.9);
@@ -483,7 +478,6 @@ section.movies {
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
-    height: fit-content;
 }
 
 .movies h2 {
