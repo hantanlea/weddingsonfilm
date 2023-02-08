@@ -980,6 +980,15 @@ section.contact {
       width: 100%;
     } 
 
+    .price-list ul li ul li {
+      list-style-type: circle;
+      margin: 0;
+    }
+
+    .price-list img {
+      width: 90%;
+    }
+
 }
 
 @media (orientation: landscape) {
