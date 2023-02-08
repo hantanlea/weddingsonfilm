@@ -3,7 +3,16 @@ Version 3
 [ ] my website
 
 Version 2
-[ ] fix down arrow bounce animations - all different
+[X] Separate script into separate file
+[ ] Add more button to videos to load next 3
+[ ] Check looks okay on tablets - video seems very small on developer tools
+[X] make video elemenet generation dynamic by creating an object which is a list of names
+    - associated with links, then loop through this list creating the html element and 
+    - adding the event listeners
+[ ] check on several different browsers and screen sizes and tablet
+[X] fix down arrow bounce animations - all different
+[ ] add load more button below fixed sixe videos section
+[ ] add reviews scrolling bar?
 [ ] Make contact form work with PHP
 [ ] Do keyword research and adjust main text to include keywords
 [ ] index on google and bing
@@ -69,4 +78,4 @@ Version 1
 [X] social links
 [X] set up email address and forwarding
 [X] hack vimeo videos to not show title
-[ ] check on several different browsers and screen sizes and tablet
+[>] check on several different browsers and screen sizes and tablet

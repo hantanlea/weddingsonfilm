@@ -15,104 +15,14 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">  
   <script src="https://kit.fontawesome.com/9f77640ccc.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>
-
-
-
-
-    /*Interactivity to determine when an animated element in in view. In view elements trigger our animation*/
-    $(document).ready(function () {
-
-      //window and animation items
-      var animation_elements = $.find('.animation-element');
-      var web_window = $(window);
-
-      //check to see if any animation containers are currently in view
-      function check_if_in_view() {
-        //get current window information
-        var window_height = web_window.height();
-        var window_top_position = web_window.scrollTop();
-        var window_bottom_position = (window_top_position + window_height);
-
-        //iterate through elements to see if its in view
-        $.each(animation_elements, function () {
-
-          //get the element sinformation
-          var element = $(this);
-          var element_height = $(element).outerHeight();
-          var element_top_position = $(element).offset().top;
-          var element_bottom_position = (element_top_position + element_height);
-
-          //check to see if this current container is visible (its viewable if it exists between the viewable space of the viewport)
-          if (element_top_position < window_bottom_position - 90) {
-            element.addClass('in-view');
-          } else {
-            element.removeClass('in-view');
-          }
-        });
-
-      }
-
-      //on or scroll, detect elements in view
-      $(window).on('scroll resize', function () {
-        check_if_in_view()
-      })
-      //trigger our scroll event on initial load
-      $(window).trigger('scroll');
-
-    });
-
-/*         
-
-/* Attempt to convert to vanilla javascript
-
-            document.addEventListener("DOMContentLoaded", function() {
-    
-            let animation_elements = document.querySelectorAll('.animation-element');
-    
-            function check_if_in_view() {
-                var window_bottom_position = (window.scrollY + window.innerHeight);
-    
-                //iterate through elements to see if its in view
-                Array.from(animation_elements).forEach(function(element) {
-    
-                  if (!(element.classList.contains('in-view'))) {
-                    //get the element information
-                    var element_top_position = element.parentElement.offsetTop; //$(element).offset().top;
-                    var element_bottom_position = (element_top_position + element.offsetHeight);
-    
-                    if (element_top_position < window_bottom_position - 90) {
-                    element.classList.add('in-view');
-                    } else {
-                    element.classList.remove('in-view');
-                    }
-                  }
-                });
-    
-            }
-    
-            //on or scroll, detect elements in view
-            window.addEventListener('scroll', function() {
-                check_if_in_view()
-            })
-            //trigger our scroll event on initial load
-            check_if_in_view();
-    
-            }); */
-
-    
-  </script>
+  <script src="scrollAnimation.js"></script>
 </head>
 
 <body>
 
   <div id="modal">
-    <a href="#close" id="close-modal-button" class="no-select">X</a>
     <div id="modal-content">
-      <!-- <video controls id="modal-video" src="resources/video/showreel.m4v"></video> -->
       <div style="padding:56.25% 0 0 0;position:relative;">
-<!--         <iframe src="https://player.vimeo.com/video/575462828?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Weddings On Film - 2021">
-        </iframe> -->
       </div>
       <script src="https://player.vimeo.com/api/player.js"></script>
     </div>
@@ -123,8 +33,8 @@
       <li class="top"><a href="#">&#8593</a></li>
       <li><a href="#about">about</a></li>
       <li><a href="#movies">movies</a></li>
-      <li class="smalllogo"><a href="#">Weddings on Film</a></li>
-      <li><a data-videofile="showreel.m4v" id="menu-showreel" href="#">showreel</a></li>
+<!--       <li class="smalllogo"><a href="#">Weddings on Film</a></li> -->
+      <li><a data-video="showreel" id="menu-showreel" href="#">showreel</a></li>
       <li><a href="#price-list">price list</a></li>
       <li><a href="#contact">contact</a></li>
       <li class="hamburger-li">
@@ -132,7 +42,7 @@
         <ul id="mobile-menu">
           <li><a class="mobile-menu-item" href="#about">about</a></li>
           <li><a class="mobile-menu-item" href="#movies">movies</a></li>
-          <li><a class="mobile-menu-item" data-videofile="showreel.m4v" id="mobile-menu-showreel" href="#">showreel</a></li>
+          <li><a class="mobile-menu-item" id="mobile-menu-showreel" data-video="showreel" href="#">showreel</a></li>
           <li><a class="mobile-menu-item" href="#price-list">price list</a></li>
           <li><a class="mobile-menu-item" href="#contact">contact</a></li>
         </ul>
@@ -141,10 +51,10 @@
   </nav>
 
   <header class="bgvideo">
-      <video playsinline autoplay muted loop poster="images/fallback.jpg" id="bgvid" src="resources/video/showreel.m4v">
+      <video playsinline autoplay muted loop poster="resources/banner-fallback.jpg" id="bgvid" src="resources/video/showreel.mp4">
       </video>
       <h1 class="logo">Weddings on Film</h1>
-      <a data-videofile="showreel.m4v" id="showreel-play-button" class="play no-select" href="#">play</a>
+      <a id="showreel" data-video="showreel" class="play no-select" href="#">play</a>
       <a class="down light-down" href="#about">down</a>
   </header>
 
@@ -153,20 +63,20 @@
     <section class="about animation-element slide-up">
       <h2>About Us</h2>
       <div class="about-content">
-      <img class="photo1" src="resources/ivan-berry-weddings-on-film-1.jpg" alt="">
-        <p>
-          Professional and affordable, Weddings On Film is a wedding videography company based in the heart of Surrey 
-          founded by professional film-maker Ivan Berry.
-       </p>
-        <p>
-          We use the very best equipment and technology to create stylish, cinematic wedding films which 
-          truly capture the love, laughter and tears of the most important day of your life for you to treasure forever.
-       </p>
-        <p>
-          Ivan has over 15 years working in television and production for companies such as Channel 5, Virgin 
-          Media and Disney Channel.
+        <img class="photo1" src="resources/ivan.jpg" alt="">
+          <p>
+            Professional and affordable, Weddings On Film is a wedding videography company based in the heart of Surrey 
+            founded by professional film-maker Ivan Berry.
         </p>
-    </div>
+          <p>
+            We use the very best equipment and technology to create stylish, cinematic wedding films which 
+            truly capture the love, laughter and tears of the most important day of your life for you to treasure forever.
+        </p>
+          <p>
+            Ivan has over 15 years working in television and production for companies such as Channel 5, Virgin 
+            Media and Disney Channel.
+          </p>
+      </div>
     <!-- <a class="down" href="#movies">down</a> -->
     </section>
     
@@ -174,66 +84,9 @@
     <section class="movies">
       <h2 class="animation-element slide-up">Recent Weddings</h2>
       <div class="movies">
-<!--       
-      <figure id="livBrendan" class="animation-element slide-up">
-        <a href="#open">
-          <img src="resources/LivBrendan-lg.png" alt="Liv & Brendan">
-          <img class="play" src="images/play2.png" alt="">
-        </a>
-        <figcaption>Liv & Brendan</figcaption>
-      </figure>
-      
-      <figure id="lottieDan" class="animation-element slide-up delay1">
-        <a href="#open">
-          <img src="resources/LottieDan-lg.png" alt="Lottie & Dan">
-          <img class="play" src="images/play2.png" alt="">
-        </a>
-        <figcaption>Lottie & Dan</figcaption>
-      </figure>
-
-      <figure id="nicolaThomas" class="animation-element slide-up delay2">
-        <a href="#open">
-          <img src="resources/NicolaThomas-lg.png" alt="Nicola & Tom">
-          <img class="play" src="images/play2.png" alt="">
-        </a>
-        <figcaption>Nicola & Tom</figcaption>
-      </figure>
-
-      <figure id="laurenMatt" class="animation-element slide-up">
-        <a href="#open">
-          <img src="resources/LaurenMatt-lg.png" alt="Lauren & Matt">
-          <img class="play" src="images/play2.png" alt="">
-        </a>
-        <figcaption>Lauren & Matt</figcaption>
-      </figure>
-
-      <figure id="lottieDanSpeeches" class="animation-element slide-up delay1">
-        <a href="#open">
-          <img src="resources/LottieDanSpeeches-lg.png" alt="Lottie & Dan Speeches">
-          <img class="play" src="images/play2.png" alt="">
-        </a>
-        <figcaption>Lottie & Dan Speeches</figcaption>
-      </figure>
-
-      <figure id ="mikeFiona" class="animation-element slide-up delay2">
-        <a href="#open">
-          <img src="resources/MikeFiona-lg.png" alt="Mike & Fiona">
-          <img class="play" src="images/play2.png" alt="">
-        </a>
-        <figcaption>Mike & Fiona</figcaption>
-      </figure>
-
-      <figure id="kimSteven" class="animation-element slide-up delay2">
-        <a href="#open">
-          <img src="resources/KimSteven-lg.png" alt="Kim & Steven">
-          <img class="play" src="images/play2.png" alt="">
-        </a>
-        <figcaption>Kim & Steven</figcaption>
-      </figure> -->
+        <!-- Content created in javascript-->
       </div>
     </section>
-      
-
 
     <div id="enquire"></div>
     <section class="enquire slide-up">
@@ -262,26 +115,18 @@
     <div id="price-list"></div>
     <section class="price-list animation-element slide-up">
       <div class="price-list-contents">
-      <h2>Price List</h2>
-      <div>
-        <h3>Highlight Reel</h3>
-        <ul>
-          <li>with background music.....£500</li>
-          <li>with recorded sound......£750</li>
-        </ul>
-        <h3>Extras</h3>
-        <ul>
-          <li>Complete recording of wedding ceremony with sound......£250</li>
-          <li>Complete recording of speeches with sound......£250</li>
-        </ul>
+        <h2>Price List</h2>
+        <div>
+          <ul>
+            <li>Highlight Reel..........£650</li>
+            <li>Highlight Reel with Recorded Sound..........£890</li>
+            <li>Speeches in Full..........£290</li>
+          </ul>
 
-      </div>
+        </div>
       </div>
       <!-- <a class="down" href="#contact">down</a> -->
     </section>
-
-
-
   </main>
 
   <footer>
@@ -291,6 +136,14 @@
         <li><a title="facebook" href="https://www.facebook.com/Weddingsonfilmuk/"><i class="fab fa-facebook"></i></a></li>
         <li><a title="instagram" href="https://www.instagram.com/weddingsonfilmuk/"><i class="fab fa-instagram"></i></a></li>
       </ul>
+
+      <div id="wp-ratedWA">
+        <a target="_blank" href="https://www.hitched.co.uk/wedding-videographers/weddings-on-film_287984.htm" rel="nofollow" title="Weddings on Film, 2022 Hitched Wedding Awards winner">
+          <img width="125" height="125" alt="Weddings on Film, 2022 Hitched Wedding Awards winner" id="wp-ratedWA-img-2022" src="https://cdn1.hitched.co.uk/img/badges/2022/badge-weddingawards_en_EN.jpg">
+        </a>
+      </div>
+      <script type="text/javascript" src="https://cdn1.hitched.co.uk/_js/wp-rated.js?v=4"></script>
+      <script>wpShowRatedWAv3('287984','2022');</script>
       <a href="tel:07949140792">07949 140792</a>
       <a href="mailto:enquiries@weddingsonfilm.co.uk">enquiries@weddingsonfilm.co.uk</a>
     <p class="copyright">&#169 Weddings on Film</p>
@@ -298,192 +151,7 @@
   </footer>
 </body>
 
-<script>
-
-  const movies = {
-    kimSteven: {
-      names: "Kim & Steven",
-      link: "https://player.vimeo.com/video/575353443?\
-      portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;\
-      autopause=0&amp;player_id=0&amp;app_id=58479",
-      image: "/resources/KimSteven-lg.png",
-    },
-    mikeFiona: {
-      names: "Mike & Fiona",
-      link: "https://player.vimeo.com/video/574149182?\
-      portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;\
-      autopause=0&amp;player_id=0&amp;app_id=58479",
-      image: "/resources/MikeFiona-lg.png",
-    },
-    nicolaThomas: {
-      names: "Nicola & Tom",
-      link: "https://player.vimeo.com/video/574865893?\
-      portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;\
-      autopause=0&amp;player_id=0&amp;app_id=58479",
-      image: "resources/NicolaThomas-lg.png",
-    },
-    lottieDan: {
-      names: "Lottie & Dan",
-      link: "https://player.vimeo.com/video/604816209?\
-      portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;\
-      autopause=0&amp;player_id=0&amp;app_id=58479",
-      image: "/resources/LottieDan-lg.png",
-    },
-    lottieDanSpeeches: {
-      names: "Lottie & Dan Speeches",
-      link: "https://player.vimeo.com/video/604816010?\
-      portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;\
-      autopause=0&amp;player_id=0&amp;app_id=58479",
-      image: "/resources/LottieDanSpeeches-lg.png",
-    },
-    laurenMatt: {
-      names: "Lauren & Matt",
-      link: "https://player.vimeo.com/video/667712982?\
-      portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;\
-      autopause=0&amp;player_id=0&amp;app_id=58479",
-      image: "/resources/LaurenMatt-lg.png",
-    },
-    livBrendan: {
-      names: "Liv & Brendan",
-      link: "https://player.vimeo.com/video/720591124?h=6ccea6bb79&amp;\
-      portrait=0&amp;title=0&amp;byline=0&amp;badge=0badge=0&amp;\
-      autopause=0&amp;player_id=0&amp;app_id=58479",
-      image: "resources/LivBrendan-lg.png",
-    },
-  };
-
-
-  function createModal() {
-
-    const iframe = document.createElement('iframe');
-    document.querySelector('body').appendChild(iframe);
-    function closeModal() {
-      document.querySelector('#modal-content div').removeChild(iframe);
-      document.getElementById('modal').style.visibility = "hidden";
-      document.getElementById('bgvid').play();
-    }
-
-    const closeModalButton = document.getElementById('close-modal-button');
-    closeModalButton.addEventListener('click', closeModal);
-
-    const modal = document.querySelector('#modal');
-    modal.addEventListener('click', closeModal);
-  }
-  createModal();
-
-  function pressPlay() {
-    let iframe = document.querySelector('iframe');
-    document.getElementById('bgvid').pause();
-    document.getElementById('modal').style.visibility = "visible";
-    // document.querySelector('body').classList.add('modal-open');
-    // const iframe = document.querySelector('.modal-content iframe');
-    iframe.setAttribute("frameborder","0");
-    iframe.allow="autoplay; fullscreen; picture-in-picture"; 
-    iframe.setAttribute("allowfullscreen","");
-    link = movies[this.id].link; 
-    iframe.title = this.id; 
-    iframe.src = link;
-    document.querySelector('#modal-content div').appendChild(iframe);
-    const body = document.querySelector('body');
-    // body.style.height = "100vh";
-    // body.style.overflow = "hidden";
-    // document.addEventListener('scroll', closeModal);
-  }
-  
-
-
-  function createThumbnail(id, names, link, image) {
-
-    let movieStill = document.createElement('img');
-    movieStill.src = image;
-    movieStill.alt = names;
-
-    let playButton = document.createElement('img');
-    playButton.classList.add("play");
-    playButton.src = "/images/play2.png";
-    playButton.alt="";
-
-    let anchor = document.createElement('a');
-    anchor.href = "#open";
-    anchor.appendChild(movieStill);
-    anchor.appendChild(playButton);
-
-    let figCaption = document.createElement('figcaption');
-    figCaption.textContent = names;
-
-    let figure = document.createElement('figure');
-    figure.id = id;
-    figure.classList.add("animation-element", "slide-up");
-    figure.appendChild(anchor);
-    figure.appendChild(figCaption);
-
-    return figure;
-  }
-
-    
-  function createMoviesDiv() {
-    const moviesDiv = document.querySelector('div.movies');
-    let i = 0;
-    for (let item in movies) {
-      let currentMovie = createThumbnail(item, movies[item].names, movies[item].link, movies[item].image);
-      let delay = i % 3;
-      currentMovie.classList.add(`delay${delay}`);
-      moviesDiv.appendChild(currentMovie);
-      currentMovie.addEventListener('click', pressPlay);
-      i++;
-    }
-  }
-
-  createMoviesDiv();
-    
-  const playShowreel = document.getElementById('showreel-play-button');
-  playShowreel.addEventListener('click', pressPlay);
-
-  const menuShowreel = document.getElementById('menu-showreel');
-  menuShowreel.addEventListener('click', pressPlay);
-
-  const mobileMenuShowreel = document.getElementById('mobile-menu-showreel');
-  mobileMenuShowreel.addEventListener('click', pressPlay);
-  
-/*   const livBrendan = document.getElementById('livBrendan');
-  livBrendan.addEventListener('click', pressPlay);
-
-  const kimSteven = document.getElementById('kimSteven');
-  kimSteven.addEventListener('click', pressPlay);
-
-  const mikeFiona = document.getElementById('mikeFiona');
-  mikeFiona.addEventListener('click', pressPlay);
-
-  const nicolaThomas = document.getElementById('nicolaThomas');
-  nicolaThomas.addEventListener('click', pressPlay);
-
-  const lottieDan = document.getElementById('lottieDan');
-  lottieDan.addEventListener('click', pressPlay);
-
-  const lottieDanSpeeches = document.getElementById('lottieDanSpeeches');
-  lottieDanSpeeches.addEventListener('click', pressPlay);
-
-  const laurenMatt = document.getElementById('laurenMatt');
-  laurenMatt.addEventListener('click', pressPlay);
- */
-  function openMobileMenu() {
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (mobileMenu.style.display == 'flex') {
-      mobileMenu.style.display = 'none';
-    }
-    else {
-      mobileMenu.style.display = 'flex';
-    }
-  }
-  const hamburger = document.getElementById('hamburger-a');
-  hamburger.addEventListener('click', openMobileMenu);
-
-  function closeMobileMenu() {
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenu.style.display = 'none';
-  }
-
-  document.querySelectorAll('.mobile-menu-item').forEach(item => item.addEventListener('click', closeMobileMenu));
-</script>
+<script src="movies.js"></script>
+<script src="loadContent.js"></script>
 </html>
 

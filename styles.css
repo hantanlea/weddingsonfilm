@@ -69,11 +69,7 @@ a:visited {
   color: inherit;
 }
 
-
-
 /* FONTS */
-
-
 
 
 /* BASICS */
@@ -128,12 +124,6 @@ a:target {
 
 
 /* VIDEO MODAL */
-
-/* body.modal-open {
-  position: fixed;
-  height: 100vh;
-  overflow-y: hidden;
-} */
 
 #modal {
   display: flex;
@@ -214,7 +204,7 @@ header {
     height: 100%;
     top: 0;
     left: 0;
-    filter: brightness(40%);
+    filter: brightness(30%);
 }
 
 .bgvideo h1 {
@@ -236,7 +226,7 @@ header {
     animation-name: fade-in;
     animation-duration: 5s;
     animation-delay: 2s;
-    background-image: url(images/weddingslogo.png); 
+    background-image: url("resources/weddingslogo.png"); 
     background-repeat: no-repeat;
     background-position: center;
 
@@ -256,7 +246,7 @@ a.play {
     opacity: 0;
     width: 50px;
     height: 50px;
-    background-image: url("images/play2.png");
+    background-image: url("resources/play.png");
     background-size: 100%;
     background-repeat: no-repeat;
     text-indent: -9999999px;
@@ -289,7 +279,7 @@ a.down {
     width: 25px;
     height: auto;
     text-indent: -9999999px;
-    background-image: url("images/downperu.png");
+    background-image: url("resources/downperu.png");
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -323,7 +313,7 @@ a.light-down {
   position: absolute;
   bottom: 0;
   margin: 0 auto;
-  background-image: url("images/down2.png");
+  background-image: url("resources/downwhite.png");
     animation-name: bounce;
     animation-iteration-count: infinite;
     animation-duration: 700ms;
@@ -698,12 +688,15 @@ section.price-list {
 div.price-list-contents {
   width: 90%;
   flex: 0 0 90%;
-  height: 90%;
-  padding: 2em;
+  padding: 4em 0 6em;
   margin-bottom: 2em;
   max-width: 1000px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   line-height: 1.8;
+}
+
+div.price-list-contents h2 {
+  margin-bottom: 3em;
 }
 
 .price-list p {
@@ -720,6 +713,8 @@ div.price-list-contents {
 .price-list ul li {
   margin: 0 auto;
   text-align: center;
+  margin-bottom: 0.4em;
+  font-size: 1.2em;
 }
 
 
@@ -727,6 +722,7 @@ div.price-list-contents {
 /* FOOTER */
 
 footer {
+    padding-top: 20px;
     text-align: center;
     margin: 40px 0 0 0;
 }
@@ -741,7 +737,7 @@ section.contact {
   height: fit-content;
   background-color: rgb(250, 250, 250);
   margin-bottom: 0 !important;
-    padding-bottom: 2em;
+  padding: 2em 0;
 }
 
 .contact ul {
@@ -912,7 +908,7 @@ section.contact {
     } */
 
     .bgvideo video {
-        filter: brightness(60%);
+        filter: brightness(40%);
     }
 
     div.about-content {
@@ -1072,7 +1068,7 @@ section.contact {
     }
 
     nav ul li.hamburger-li > a {
-        background-image: url(images/hamburgerperu.png);
+        background-image: url("resources/hamburgerperu.png");
         background-size: contain;
         background-position: center center;
         background-repeat: no-repeat;
