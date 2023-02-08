@@ -36,7 +36,7 @@ function createThumbnail(id, names, link, image) {
 
   let playButton = document.createElement('img');
   playButton.classList.add("play");
-  playButton.src = "/images/play2.png";
+  playButton.src = "/resources/play.png";
   playButton.alt="";
 
   let anchor = document.createElement('a');

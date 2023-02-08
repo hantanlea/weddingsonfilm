@@ -696,14 +696,18 @@ div.price-list-contents {
 }
 
 div.price-list-contents h2 {
-  margin-bottom: 3em;
+  margin-bottom: 2.5em;
+}
+
+.price-list h3 {
+  font-size: 1.3em;
+  color: peru;
 }
 
 .price-list p {
   text-align: center;
-  font-size: 0.9em;
-  margin-top: -0.2em;
-  margin-bottom: 1em;
+  font-size: 1.3em;
+  font-family: 'Playfair Display', serif;
 }
 .price-list ul {
   margin-bottom: 2em;
@@ -712,9 +716,25 @@ div.price-list-contents h2 {
 
 .price-list ul li {
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
   margin-bottom: 0.4em;
-  font-size: 1.2em;
+  font-size: 1em;
+}
+
+.price-list ul li ul li {
+  list-style-type: circle;
+  margin: 0 5em 0;
+}
+
+.price-list img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5em;
+  margin-bottom: 5em;
+  width: 60%;
+  box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2), 0 0px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 
@@ -730,6 +750,14 @@ footer {
 footer h2 {
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+footer div#wp-ratedWA {
+  margin: 2em 0;
+}
+
+footer #wp-ratedWA img {
+  margin: 0 1em;
 }
 
 section.contact {
@@ -978,8 +1006,6 @@ section.contact {
         top: 30vh;
     } */
 
-    .bgvideo video {
-    }
 
     a.down {
         display: none;
