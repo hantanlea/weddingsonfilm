@@ -980,6 +980,10 @@ section.contact {
       width: 100%;
     } 
 
+    .price-list ul {
+      padding: 0.2em 1.5em;
+    }
+
     .price-list ul li ul li {
       list-style-type: circle;
       margin: 0;
