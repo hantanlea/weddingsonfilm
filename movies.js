@@ -6,6 +6,21 @@ const movies = {
     link: "https://player.vimeo.com/video/731726247?h=b022d0fa93",
     image: "",
   },
+  oliviaAdam: {
+    names: "Olivia & Adam",
+    link: "https://player.vimeo.com/video/730028438?h=9516e41dac",
+    image: "resources/wedding-thumbnails/OliviaAdam.png",
+  },
+  bethHarry: {
+    names: "Beth & Harry",
+    link: "https://player.vimeo.com/video/769467911?h=400e77a8d9",
+    image: "/resources/wedding-thumbnails/BethHarry.png",
+  },
+  emmaTristram: {
+    names: "Emma & Tristram",
+    link: "https://player.vimeo.com/video/727385600?h=26ec050a9b",
+    image: "/resources/wedding-thumbnails/EmmaTristram.png",
+  },
   emmaWill: {
     names: "Emma & Will",
     link: "https://player.vimeo.com/video/742254856?h=24c51e4d32",
@@ -15,16 +30,6 @@ const movies = {
     names: "Leigh & Liam",
     link: "https://player.vimeo.com/video/736991663?h=58600f52c5",
     image: "/resources/wedding-thumbnails/LeighLiam.png",
-  },
-  emmaTristram: {
-    names: "Emma & Tristram",
-    link: "https://player.vimeo.com/video/727385600?h=26ec050a9b",
-    image: "/resources/wedding-thumbnails/EmmaTristram.png",
-  },
-  bethHarry: {
-    names: "Beth & Harry",
-    link: "https://player.vimeo.com/video/769467911?h=400e77a8d9",
-    image: "/resources/wedding-thumbnails/BethHarry.png",
   },
   arranJosh: {
     names: "Arran & Josh",
@@ -45,11 +50,6 @@ const movies = {
     names: "Emily & Adam",
     link: "https://player.vimeo.com/video/777070954?h=fd124808f1",
     image: "/resources/wedding-thumbnails/EmilyAdam.png",
-  },
-  oliviaAdam: {
-    names: "Olivia & Adam",
-    link: "https://player.vimeo.com/video/730028438?h=9516e41dac",
-    image: "resources/wedding-thumbnails/OliviaAdam.png",
   },
   abbiJosh: {
     names: "Abbi & Josh",
