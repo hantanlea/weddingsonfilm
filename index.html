@@ -15,7 +15,9 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">  
   <script src="https://kit.fontawesome.com/9f77640ccc.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="scrollAnimation.js"></script>
+  <script async src="movies.js"></script>
+  <script defer src="loadContent.js"></script>
+  <script defer src="scrollAnimationjquery.js"></script>
 </head>
 
 <body>
@@ -28,12 +30,11 @@
     </div>
   </div>
   
-  <nav id="nav">
+  <nav class="scroll-trigger" id="nav">
     <ul id="main-menu-bar">
       <li class="top"><a href="#">&#8593</a></li>
       <li><a href="#about">about</a></li>
       <li><a href="#movies">movies</a></li>
-<!--       <li class="smalllogo"><a href="#">Weddings on Film</a></li> -->
       <li><a data-video="showreel" id="menu-showreel" href="#">showreel</a></li>
       <li><a href="#price-list">price list</a></li>
       <li><a href="#contact">contact</a></li>
@@ -54,13 +55,13 @@
       <video playsinline autoplay muted loop poster="resources/banner-fallback.jpg" id="bgvid" src="resources/video/showreel.mp4">
       </video>
       <h1 class="logo">Weddings on Film</h1>
-      <a id="showreel" data-video="showreel" class="play no-select" href="#">play</a>
-      <a class="down light-down" href="#about">down</a>
+      <a id="showreel" data-video="showreel" class="play-button no-select" href="#">play</a>
+      <a class="down-button" href="#about">down</a>
   </header>
 
   <main>
     <div id="about"></div>
-    <section class="about animation-element slide-up">
+    <section class="about scroll-trigger animation-element slide-up">
       <h2>About Us</h2>
       <div class="about-content">
         <img class="photo1" src="resources/ivan.jpg" alt="">
@@ -77,17 +78,17 @@
             Media and Disney Channel.
           </p>
       </div>
-    <!-- <a class="down" href="#movies">down</a> -->
     </section>
     
     <div id="movies"></div>
     <section class="movies">
-      <h2 class="animation-element slide-up">Recent Weddings</h2>
+      <h2 class="scroll-trigger animation-element slide-up">Recent Weddings</h2>
       <div class="movies">
-        <!-- Content created in javascript-->
+        <!-- Content created dynamically in loadContent.js -->
       </div>
     </section>
 
+    <!-- Entire Section Removed until completed 
     <div id="enquire"></div>
     <section class="enquire slide-up">
       <form action="contactform.php" method="POST">
@@ -111,9 +112,10 @@
         <button type="submit" name="submit">Submit</button>
       </form>
     </section>
+  -->
 
     <div id="price-list"></div>
-    <section class="price-list animation-element slide-up">
+    <section class="price-list scroll-trigger animation-element slide-up">
       <div class="price-list-contents">
         <h2>Price List</h2>
         <div>
@@ -148,7 +150,7 @@
           <img src="resources/usb.png">
         </div>
       </div>
-      <!-- <a class="down" href="#contact">down</a> -->
+      <!-- <a class="down-button" href="#contact">down</a> -->
     </section>
   </main>
 
@@ -180,7 +182,5 @@
   </footer>
 </body>
 
-<script src="movies.js"></script>
-<script src="loadContent.js"></script>
 </html>
 

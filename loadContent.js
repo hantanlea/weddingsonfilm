@@ -5,6 +5,7 @@ function createModal() {
   function closeModal() {
     document.querySelector('#modal-content div').removeChild(document.querySelector('iframe'));
     document.getElementById('modal').style.visibility = "hidden";
+    document.body.classList.remove("modal-open");
     document.getElementById('bgvid').play();
   }
 
@@ -16,17 +17,15 @@ function pressPlay() {
   let iframe = document.createElement('iframe');
   document.getElementById('bgvid').pause();
   document.getElementById('modal').style.visibility = "visible";
+  document.body.classList.add("modal-open");
   iframe.setAttribute("frameborder","0");
   iframe.setAttribute("autoplay", "1");
   iframe.allow="autoplay; fullscreen; picture-in-picture"; 
-  iframe.setAttribute("allowfullscreen","");
   let link = movies[this.dataset.video].link + "&amp;portrait=0&amp;title=0&amp;byline=0&amp;badge=0&amp; \
   autopause=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479";
   iframe.src = link;
   document.querySelector('#modal-content div').appendChild(iframe);
 }
-
-
 
 function createThumbnail(id, names, link, image) {
 
@@ -35,8 +34,8 @@ function createThumbnail(id, names, link, image) {
   movieStill.alt = names;
 
   let playButton = document.createElement('img');
-  playButton.classList.add("play");
-  playButton.src = "/resources/play.png";
+  playButton.classList.add("play-button");
+  playButton.src = "/resources/play-button.png";
   playButton.alt="";
 
   let anchor = document.createElement('a');
@@ -50,7 +49,7 @@ function createThumbnail(id, names, link, image) {
   let figure = document.createElement('figure');
   figure.id = id;
   figure.setAttribute("data-video", id);
-  figure.classList.add("animation-element", "slide-up");
+  figure.classList.add("scroll-trigger", "animation-element", "slide-up");
   figure.appendChild(anchor);
   figure.appendChild(figCaption);
 
@@ -84,28 +83,6 @@ function loadContent() {
 
 }
   
-
-/*   const livBrendan = document.getElementById('livBrendan');
-livBrendan.addEventListener('click', pressPlay);
-
-const kimSteven = document.getElementById('kimSteven');
-kimSteven.addEventListener('click', pressPlay);
-
-const mikeFiona = document.getElementById('mikeFiona');
-mikeFiona.addEventListener('click', pressPlay);
-
-const nicolaThomas = document.getElementById('nicolaThomas');
-nicolaThomas.addEventListener('click', pressPlay);
-
-const lottieDan = document.getElementById('lottieDan');
-lottieDan.addEventListener('click', pressPlay);
-
-const lottieDanSpeeches = document.getElementById('lottieDanSpeeches');
-lottieDanSpeeches.addEventListener('click', pressPlay);
-
-const laurenMatt = document.getElementById('laurenMatt');
-laurenMatt.addEventListener('click', pressPlay);
-*/
 
 function openMobileMenu() {
   const mobileMenu = document.getElementById('mobile-menu');

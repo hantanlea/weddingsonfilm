@@ -1,51 +1,50 @@
 Version 3
 [ ] animate handwritten logo
+[ ] gdpr
+[ ] cookies statement?
+[ ] google analytics
+[ ] directory listings?
+[ ] Do keyword research and adjust main text to include keywords
+[ ] index on google and bing
+[ ] google maps listing
+[ ] build backlinks
+[ ] research other requirements for website eg.
+[ ] Fix responsive contact form layout
+[ ] validation on email and phone number inputs
+    [ ] make date box look like a date box
+[ ] mobile menu bar logo?
+[ ] mobile menu bar logo only appears after scroll
 [ ] my website
+[ ] my credits and logo and link
 
 Version 2
+[ ] If Chrome full screen then vimeo iframe video wont go fullscreen?
+[ ] clean up buttons on vimeo videos from vimeo account
 [X] Separate script into separate file
-[ ] Add more button to videos to load next 3
+[ ] Add more buttons to videos to load next?
 [ ] Check looks okay on tablets - video seems very small on developer tools
 [X] make video elemenet generation dynamic by creating an object which is a list of names
     - associated with links, then loop through this list creating the html element and 
     - adding the event listeners
 [ ] check on several different browsers and screen sizes and tablet
 [X] fix down arrow bounce animations - all different
-[ ] add load more button below fixed sixe videos section
-[ ] add reviews scrolling bar?
+[ ] add load more button below fixed size videos section
+[ ] add scrolling reviews bar?
 [ ] Make contact form work with PHP
-[ ] Do keyword research and adjust main text to include keywords
-[ ] index on google and bing
-[ ] google maps listing
-[ ] build backlinks
-[ ] research other requirements for website eg.
 [X] metadata
 [X] sitemap
-[ ] gdpr
-[ ] cookies statement?
-[ ] google analytics
-[ ] directory listings?
-[ ] my credits and logo and link
 [ ] stop link tooltip popup
-[ ] hitched.co.uk
+[X] hitched.co.uk
 [ ] improve favicon
-[ ] fade in down button (use javascript to time to end of previous animations?)
-[ ] fix down arrow positioning - should be same location on every page - use fixed positioning and javascript to change link ref? 
-    or reduce margin and increase padding
-    or set height to 100vh
+[X] fade in down button (use javascript to time to end of previous animations?)
 [X] Try vimeo?
-[ ] Fix responsive contact form layout
 [X] click on background closes modal
 [ ] add a return to top button
-[ ] validation on email and phone number inputs
-    [ ] make date box look like a date box
-    [ ] mobile menu bar logo
-    [ ] mobile menu bar logo only appears after scroll
 [ ] accessibility
-[ ] re-organise code
-    [ ] remove commented out code
+[ ] clean up code!
     [ ] comment out obsolete code
     [ ] check everything still works
+    [ ] remove commented out code
     [ ] combine spread out code
     [ ] reorder css rules
         Positioning
@@ -53,8 +52,9 @@ Version 2
         Typographic
         Visual
         Misc
+    [ ] Sort out media queries and simplify! How much really necessary??
 [ ] change favicon
-
+[ ] on mid size screens with two columns video slide-up delay acts strangely - remove it or fix it
 
 Version 1
 [X] favicon.ico

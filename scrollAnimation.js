@@ -1,82 +1,59 @@
-"use strict";
+"use strict"
 
-/*Interactivity to determine when an animated element in in view. In view elements trigger our animation*/
-$(document).ready(function () {
+const scrollTriggers = document.querySelectorAll(".scroll-trigger");
 
-  //window and animation items
-  var animation_elements = $.find('.animation-element');
-  var web_window = $(window);
-
-  //check to see if any animation containers are currently in view
-  function check_if_in_view() {
-    //get current window information
-    var window_height = web_window.height();
-    var window_top_position = web_window.scrollTop();
-    var window_bottom_position = (window_top_position + window_height);
-
-    //iterate through elements to see if its in view
-    $.each(animation_elements, function () {
-
-      //get the element sinformation
-      var element = $(this);
-      var element_height = $(element).outerHeight();
-      var element_top_position = $(element).offset().top;
-      var element_bottom_position = (element_top_position + element_height);
-
-      //check to see if this current container is visible (its viewable if it exists between the viewable space of the viewport)
-      if (element_top_position < window_bottom_position - 90) {
-        element.addClass('in-view');
-      } else {
-        element.removeClass('in-view');
-      }
-    });
-
-  }
-
-  //on or scroll, detect elements in view
-  $(window).on('scroll resize', function () {
-    check_if_in_view()
+const observer = new IntersectionObserver( (entries) => {
+  entries.forEach(entry => {
+    entry.target.classList.toggle("in-view", entry.isIntersecting);
+    if (entry.isIntersecting) {
+      observer.unobserve(entry.target);
+    };
   })
-  //trigger our scroll event on initial load
-  $(window).trigger('scroll');
-
+},
+{
+  threshold: 0,
 });
 
-/*         
+scrollTriggers.forEach(scrollTrigger => {
+  observer.observe(scrollTrigger);
+})
 
-/* Attempt to convert to vanilla javascript
+const navObserver = new IntersectionObserver((nav) => {
+  function transitionend() {
+    observer.observe(this);
+    this.removeEventListener("transitionend", transitionend);
+  }
+  if (nav[0].isIntersecting) {
+    scrollTriggers.forEach(scrollTrigger => {
+      scrollTrigger.classList.toggle("in-view", false);
+      scrollTrigger.addEventListener("transitionend", transitionend);
+    })
+  }
+})
 
-        document.addEventListener("DOMContentLoaded", function() {
+navObserver.observe(document.getElementById("nav"));
 
-        let animation_elements = document.querySelectorAll('.animation-element');
+// auto load all animations if nav bar clicked
+// need to change this to only autoload animations that are above
 
-        function check_if_in_view() {
-            var window_bottom_position = (window.scrollY + window.innerHeight);
+// IS THIS WHOLE THING WAY OVERCOMPLICATED?? Look back at jquery version and see if can be copied using transitioneend events?
 
-            //iterate through elements to see if its in view
-            Array.from(animation_elements).forEach(function(element) {
+document.querySelectorAll("nav a").forEach(link => {
+  function preLoadAnimations() {
+    for (let scrollTrigger of scrollTriggers) {
+      // this is not going to work because the scrollTriggers are not the same as the anchor targets and do not currently have id
+      if (scrollTrigger.id == this.hash.slice(1)) break;
+      scrollTrigger.classList.add("in-view");
+      observer.unobserve(scrollTrigger);
+    }
+  }
+  link.addEventListener("click", preLoadAnimations);
+})
 
-              if (!(element.classList.contains('in-view'))) {
-                //get the element information
-                var element_top_position = element.parentElement.offsetTop; //$(element).offset().top;
-                var element_bottom_position = (element_top_position + element.offsetHeight);
 
-                if (element_top_position < window_bottom_position - 90) {
-                element.classList.add('in-view');
-                } else {
-                element.classList.remove('in-view');
-                }
-              }
-            });
 
-        }
-
-        //on or scroll, detect elements in view
-        window.addEventListener('scroll', function() {
-            check_if_in_view()
-        })
-        //trigger our scroll event on initial load
-        check_if_in_view();
-
-        }); */
-
+/* PSEUDOCODE
+loop over the links
+if the target of the link is passed
+make in view and unobserve
+*/
