@@ -1,5 +1,7 @@
 "use strict";
 
+import { movies } from "./movies.js";
+
 function createModal() {
 
   function closeModal() {

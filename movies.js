@@ -1,6 +1,6 @@
 "use strict";
 
-const movies = {
+export const movies = {
   showreel: {
     names: "showreel",
     link: "https://player.vimeo.com/video/849516785?h=f2ec5a0c49",
